@@ -31,11 +31,14 @@ module.exports = {
     path: PATHS.dist,
     publicPath: '/',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       // Files js
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
         use: [
           {
@@ -52,7 +55,7 @@ module.exports = {
       },
       // Files sass -> css
       {
-        test: /\.scss|css$/,
+        test: /\.(scss|css)$/,
         use: [
           // 'style-loader', // dev
           MiniCssExtractPlugin.loader, // prod
