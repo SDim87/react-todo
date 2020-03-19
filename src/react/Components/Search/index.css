@@ -1,0 +1,28 @@
+.search {
+  display: flex;
+}
+
+.search__btn {
+  position    : relative;
+  width       : 30px;
+  height      : 30px;
+  margin      : 0;
+  margin-right: 10px;
+  padding     : 0;
+  cursor      : pointer;
+  border      : 0;
+  outline     : none;
+  background  : transparent;
+}
+
+.search__btn::after {
+  position   : absolute;
+  top        : 50%;
+  left       : 50%;
+  content    : 'search';
+  user-select: none;
+  transform  : translate(-50%, -50%);
+  color      : var(--blue);
+  font-family: 'Material Icons';
+  font-size  : 24px;
+}

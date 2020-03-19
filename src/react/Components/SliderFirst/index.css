@@ -1,0 +1,232 @@
+.slider-first {
+  /* position     : relative; */
+  position        : fixed;
+  top             : 50%;
+  left            : calc(50% - 130px);
+  z-index         : 1000;
+  box-sizing      : border-box;
+  width           : 60%;
+  max-width       : 856px;
+  margin          : 0 auto;
+  padding         : 60px 70px;
+  transform       : translate(-50%, -50%);
+  border-radius   : 20px;
+  background-color: var(--base4);
+}
+
+.slider-first__nav {
+  position        : absolute;
+  top             : 0;
+  bottom          : 0;
+  display         : flex;
+  width           : 70px;
+  cursor          : pointer;
+  border          : none;
+  background-color: var(--grey);
+
+  align-items    : center;
+  justify-content: center;
+}
+
+.slider-first__nav:hover .icon {
+  stroke: var(--blue);
+}
+
+.slider-first__nav_prev {
+  left                     : 0;
+  border-top-left-radius   : 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.slider-first__nav_next {
+  right                     : 0;
+  border-top-right-radius   : 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.slider-first .swiper-container {
+  width  : 460px;
+  padding: 0 20px;
+}
+
+.slider-first__thumb .swiper-wrapper {
+  /* margin-left: calc(-50% + 50px); */
+  transform     : none !important;
+}
+
+.slider-first__main .swiper-slide,
+.slider-first__thumb .swiper-slide {
+  border-radius      : 5px;
+  background-repeat  : no-repeat;
+  background-position: 50% 50%;
+  background-size    : cover;
+}
+
+.slider-first__main .swiper-slide {
+  height: 460px;
+}
+
+.slider-first__thumb .swiper-slide {
+  position  : relative;
+  box-sizing: border-box;
+  width     : 25%;
+  height    : 100px;
+  cursor    : pointer;
+}
+
+.slider-first__thumb .swiper-container {
+  padding-top: 20px;
+}
+
+.slider-first__thumb .swiper-slide::before {
+  position     : absolute;
+  top          : 0;
+  right        : 0;
+  bottom       : 0;
+  left         : 0;
+  content      : '';
+  transition   : var(--transition);
+  opacity      : 0;
+  border       : 2px solid var(--blue);
+  border-radius: 5px;
+}
+
+.slider-first__thumb .swiper-slide:hover::before {
+  opacity: 1;
+}
+
+.slider-first__thumb .swiper-slide.swiper-slide-active::before {
+  opacity: 1;
+}
+
+.slider-first__del-img {
+  position        : absolute;
+  top             : -11px;
+  right           : -11px;
+  z-index         : -1;
+  display         : flex;
+  width           : 24px;
+  height          : 24px;
+  margin          : 0;
+  padding         : 0;
+  cursor          : pointer;
+  transition      : var(--transition);
+  pointer-events  : none;
+  opacity         : 0;
+  border          : none;
+  border          : 1px solid transparent;
+  border-radius   : 50%;
+  outline         : none;
+  background-color: var(--blue);
+
+  align-items    : center;
+  justify-content: center;
+}
+
+
+.slider-first__thumb .swiper-slide.swiper-slide-active .slider-first__del-img {
+  z-index       : 10;
+  pointer-events: initial;
+  opacity       : 1;
+}
+
+.slider-first__thumb .swiper-slide.swiper-slide-active .slider-first__del-img:hover {
+  opacity: 0.9;
+  border : 1px solid var(--base0);
+}
+
+.slider-first__img {
+  width : 100%;
+  height: 100%;
+
+  object-fit     : cover;
+  object-position: center;
+}
+
+.slider-first__bottom {
+  position        : absolute;
+  right           : 0;
+  bottom          : 0;
+  left            : 0;
+  display         : flex;
+  flex-direction  : column;
+  min-height      : 72px;
+  background-color: var(--base4-thick);
+
+  justify-content: center;
+  align-items    : center;
+}
+
+.slider-first__btn {
+  display         : flex;
+  box-sizing      : border-box;
+  width           : 190px;
+  height          : 30px;
+  padding         : 0;
+  cursor          : pointer;
+  transition      : var(--transition);
+  color           : var(--base0);
+  border          : none;
+  background-color: transparent;
+
+  align-items: center;
+}
+
+.slider-first__btn:hover {
+  color: var(--blue);
+}
+
+.slider-first__btn .icon {
+  margin-right: 10px;
+}
+
+.slider-first__btn:hover .icon {
+  fill: var(--blue);
+}
+
+.slider-first__btn label {
+  display: flex;
+  height : 30px;
+  cursor : pointer;
+
+  align-items    : center;
+  justify-content: space-between;
+}
+
+.slider-first__wrap-btn {
+  max-width: 210px;
+  margin   : 40px auto 0;
+}
+
+.slider-first__close {
+  position        : absolute;
+  top             : -40px;
+  right           : 0;
+  display         : flex;
+  padding         : 0;
+  cursor          : pointer;
+  border          : none;
+  background-color: transparent;
+}
+
+.slider-first__close:hover .icon {
+  stroke: var(--blue);
+}
+
+.fade-in-enter {
+  opacity: 0;
+}
+
+.fade-in-enter-active {
+  transition: opacity 500ms;
+  opacity   : 1;
+}
+
+.fade-in-exit {
+  opacity: 1;
+}
+
+.fade-in-exit-active {
+  transition: opacity 500ms;
+  opacity   : 0;
+}

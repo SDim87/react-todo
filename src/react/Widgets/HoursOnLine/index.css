@@ -1,0 +1,13 @@
+.HOL_fact{
+  fill: #FFCA08
+}
+
+.HOL_plan{
+  fill: #4E58AB;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}

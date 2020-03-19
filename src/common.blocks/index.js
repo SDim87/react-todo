@@ -1,5 +1,5 @@
-function importAll(r) {
-  r.keys().forEach(r)
+function importAll(el) {
+  el.keys().forEach(el)
 }
 
 importAll(require.context('./', true, /\.(js|scss|png|jpe?g|gif|svg)$/))

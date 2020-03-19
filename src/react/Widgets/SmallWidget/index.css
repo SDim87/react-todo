@@ -1,0 +1,9 @@
+.smallWidget .widget__help::after{
+  color: var(--base0)
+}
+
+.smallWidget__wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+.date-select {
+  position: relative;
+}
+
+.date-select__inner {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px 0 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.date-select__icon {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.date-select__text {
+  opacity: 0.8;
+  color: var(--base0);
+
+  font-size: 14px;
+  line-height: 1;
+}
+
+.date-select__icon::before {
+  transition: var(--transition);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  content: 'date_range';
+  transform: translate(-50%, -50%);
+
+  color: var(--blue);
+
+  font-family: 'Material Icons';
+  font-size: 18px;
+}

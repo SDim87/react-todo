@@ -1,0 +1,52 @@
+.widget__content{
+  width: 100%;
+  height: 100%;
+}
+
+.bar_wrap {
+  opacity: .6;
+
+  fill: #1F2839;
+}
+
+.bar__plan {
+  cursor: pointer;
+
+  fill: #00B5EA;
+}
+
+.bar__current {
+  cursor: pointer;
+
+  fill: #04A881;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.axis > .domain {
+  stroke: none;
+}
+
+.tick > line {
+  stroke: none;
+}
+
+.axis .grid-line {
+  stroke: rgba(227, 227, 227, 0.315);
+  shape-rendering: crispedges;
+  stroke-opacity: 0.2;
+}
+
+.sales__current{
+  text-align: right;
+
+  color: #04A881;
+
+  font-family: Roboto;
+  font-size: 1em;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 19px;
+}

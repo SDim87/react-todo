@@ -1,0 +1,3 @@
+.input__src:checked ~ .input__icon {
+  background: red;
+}

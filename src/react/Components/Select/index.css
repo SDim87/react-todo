@@ -1,0 +1,125 @@
+.select {
+  position: relative;
+  display : flex;
+  width   : 100%;
+
+  align-items: center;
+}
+
+.select>span {
+  margin-right: auto;
+  font-size   : 15px;
+}
+
+.select__box {
+  position: relative;
+  overflow: hidden;
+  width   : 100%;
+  padding : 20px 0 10px;
+}
+
+.select__label {
+  position   : absolute;
+  top        : 6px;
+  left       : 0;
+  white-space: nowrap;
+  color      : var(--base0-medium);
+  font-size  : 13px;
+  line-height: 14px;
+}
+
+.select__input {
+  position: relative;
+  width   : 100%;
+}
+
+.select__input::before,
+.select__input::after {
+  position   : absolute;
+  top        : 50%;
+  transform  : translateY(-50%);
+  color      : var(--blue);
+  font-family: 'Material Icons';
+}
+
+.select__input.is-only-read::before,
+.select__input.is-only-read::after {
+  display: none;
+}
+
+.select__input::before {
+  left     : 0;
+  content  : 'search';
+  font-size: 18px;
+}
+
+.select__input::after {
+  right    : 0;
+  content  : 'keyboard_arrow_down';
+  font-size: 16px;
+}
+
+.select__search {
+  box-sizing      : border-box;
+  width           : 100%;
+  padding         : 0;
+  padding-left    : 25px;
+  cursor          : pointer;
+  text-overflow   : ellipsis;
+  color           : var(--base0);
+  border          : none;
+  border-bottom   : 1px solid var(--base2);
+  outline         : none;
+  background-color: transparent;
+  line-height     : 30px;
+}
+
+.select__input.is-only-read .select__search {
+  padding-left: 0;
+  cursor      : inherit;
+}
+
+.select__search::placeholder {
+  color: var(--base0);
+}
+
+.select__dropdown {
+  position        : absolute;
+  top             : 100%;
+  left            : 0;
+  z-index         : 1;
+  overflow        : hidden;
+  box-sizing      : border-box;
+  min-width       : 220px;
+  max-height      : 0;
+  transition      : all 0.3s ease-in-out;
+  border-radius   : 5px;
+  background-color: var(--grey);
+  box-shadow      : 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.select__dropdown.is-opened {
+  max-height: 600px;
+}
+
+.select__list {
+  margin         : 0;
+  padding        : 15px;
+  list-style-type: none;
+}
+
+.select__option {
+  cursor     : pointer;
+  transition : all 0.3s ease-in-out;
+  color      : var(--base0-medium);
+  font-size  : 14px;
+  line-height: 14px;
+}
+
+.select__option:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.select__option:hover {
+  color: var(--base0);
+}

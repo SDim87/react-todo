@@ -1,0 +1,18 @@
+.content-widget{
+  padding: 0 25px;
+}
+.content-widget__title{
+  font-size: 30px;
+  line-height: 35px;
+}
+.content-widget__title-description{
+  color: var(--blue);
+  margin-left: 10px;
+}
+.content-widget__content{
+  margin-top: 25px;
+}
+.content-widget__default-wrapper{
+  border-radius: 5px;
+  background: var(--base4)
+}

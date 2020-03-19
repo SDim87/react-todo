@@ -1,0 +1,39 @@
+.expand-block__trigger {
+  position: relative;
+  padding: 15px;
+  cursor: pointer;
+  color: var(--base0);
+  border-top: 1px solid var(--base7);
+  font-size: 15px;
+  line-height: 14px;
+}
+
+.expand-block__trigger::before {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  content: 'expand_more';
+  transform: translateY(-50%);
+  font-family: 'Material Icons';
+  font-size: 20px;
+  line-height: 20px;
+  transition: var(--transition);
+}
+
+.expand-block__trigger.is-opened::before {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.expand-block__content {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.expand-block__content.is-opened {
+  overflow-y: scroll;
+  max-height: 132px;
+  padding: 10px 0;
+  border-top: 1px solid var(--base7);
+}

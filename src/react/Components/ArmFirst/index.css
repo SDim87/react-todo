@@ -1,0 +1,50 @@
+.arm {
+  display       : flex;
+  flex-direction: column;
+  box-sizing    : border-box;
+  width         : 120px;
+  height        : 60px;
+  margin        : 0 0 20px 20px;
+  cursor        : pointer;
+  transition    : var(--transition);
+  color         : var(--base1);
+  border        : 1px solid var(--base2);
+  border-radius : 5px;
+
+  align-items    : center;
+  justify-content: center;
+}
+
+.arm.is-active {
+  color : var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.arm:hover,
+.arm:focus {
+  color : var(--blue);
+  border: 1px solid var(--blue);
+}
+
+.arm__img {
+  width        : 20px;
+  height       : 20px;
+  margin-bottom: 5px;
+}
+
+.arm__img path {
+  transition: var(--transition);
+}
+
+.arm:hover .arm__img path {
+  fill: var(--blue);
+}
+
+.arm.is-active .arm__img path {
+  fill: var(--blue);
+}
+
+.arm__descr {
+  font-size  : 13px;
+  line-height: 20px;
+}

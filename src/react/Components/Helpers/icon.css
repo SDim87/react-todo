@@ -1,0 +1,41 @@
+.icon {
+  transition: var(--transition);
+}
+
+/* color */
+.icon_base0-stroke {
+  stroke: var(--base0);
+}
+
+.icon_grey-stroke {
+  stroke: var(--grey);
+}
+
+.icon_base0-fill {
+  fill: var(--base0);
+}
+
+/* Size */
+.icon_size_8 {
+  width: 8px;
+  height: 8px;
+}
+
+.icon_size_15 {
+  width: 15px;
+  height: 15px;
+}
+
+.icon_size_20 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon_size_30 {
+  width: 30px;
+  height: 30px;
+}
+
+.icon_mr_5 {
+  margin-right: 5px;
+}

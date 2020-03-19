@@ -1,0 +1,41 @@
+.current-value{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  color: #04A881;
+
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1;
+}
+.current-value__red {
+  color: #FA4B4B;
+}
+.current-value span {
+  color: #fff;
+
+  font-size: 18px;
+}
+
+.employment__tooltip{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+
+  width: 33px;
+  height: 33px;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: rgba(95, 101, 115, 0.9);
+
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

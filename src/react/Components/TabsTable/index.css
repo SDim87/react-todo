@@ -1,0 +1,75 @@
+.tabs-table {
+  padding: 0 20px;
+}
+
+.tabs-table__list {
+  display                : flex;
+  list-style-type        : none;
+  border-top-left-radius : 5px;
+  border-top-right-radius: 5px;
+  background-color       : var(--base6);
+}
+
+.tabs-table__item {
+  position   : relative;
+  padding    : 30px 35px;
+  cursor     : pointer;
+  transition : var(--transition);
+  text-align : center;
+  color      : var(--base2);
+  font-size  : 15px;
+  line-height: 18px;
+}
+
+.tabs-table__item:not(:last-child)::before {
+  position   : absolute;
+  top        : 50%;
+  right      : 0;
+  width      : 1px;
+  height     : 43px;
+  content    : '';
+  transform  : translateY(-50%);
+  border-left: 1px solid var(--base2);
+}
+
+.tabs-table__item.is-active {
+  pointer-events: none;
+  color         : var(--base0);
+}
+
+.tabs-table__item.is-active::after {
+  position        : absolute;
+  right           : 35px;
+  bottom          : 0;
+  left            : 35px;
+  z-index         : 1;
+  height          : 4px;
+  content         : '';
+  transition      : var(--transition);
+  background-color: var(--blue);
+}
+
+.tabs-table__item:hover {
+  color: var(--base0);
+}
+
+.tabs-table__content {
+  padding                   : 25px 20px 60px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius : 5px;
+  background-color          : var(--base4);
+}
+
+.tabs-table__row {
+  display: flex;
+
+  align-items: center;
+}
+
+.tabs-table__row:not(:first-child) {
+  margin-top: 30px;
+}
+
+.tabs-table__row>div:not(:last-child) {
+  margin-right: 30px;
+}

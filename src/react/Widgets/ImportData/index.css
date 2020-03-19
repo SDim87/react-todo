@@ -1,0 +1,37 @@
+.tabs-button__wrapper{
+  padding: 25px 30px 15px 30px;
+}
+.import-data__tabs{
+  display: inline-flex;
+  background: var(--base4);
+  border-radius: 5px 5px 0 0;
+}
+.import-data__wrapper{
+  padding: 16px;
+  background: var(--base4);
+  border-radius: 0 5px 5px 5px;
+}
+.tabs-button__item{
+  outline: none;
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 0;
+}
+.tabs-button__item:hover{
+  cursor: pointer;
+}
+.tabs-button__item:after{
+  content: '';
+  margin-top: 15px;
+  display: flex;
+  height: 4px;
+  width: 100%;
+  background: transparent;
+}
+.tabs-button__item-active:after{
+  background: var(--blue)
+}

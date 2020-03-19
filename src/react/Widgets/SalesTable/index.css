@@ -1,0 +1,119 @@
+/*sales Table*/
+.salesTable {
+  width: 100%;
+  max-width: calc(100% - 20px);
+  white-space: nowrap;
+  margin: 20px auto;
+  padding: 20px 0;
+  border-radius: 5px;
+  background-color: #2a3243;
+}
+
+.salesTable_margin {
+  margin-top: 40px;
+}
+
+.salesTable__title {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.salesTable__title span {
+  color: var(--blue);
+}
+
+.salesTable__scroll {
+  overflow-x: auto;
+}
+
+.salesTable table {
+  overflow: hidden;
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid rgba(144, 144, 144, 0.4);
+  border-collapse: separate;
+  border-radius: 5px;
+}
+
+.salesTable table thead {
+  border: 1px solid rgba(144, 144, 144, 0.4);
+}
+
+.salesTable table tbody .salesTable__row.salesTable__row_first td {
+  background-color: var(--green-slick);
+}
+
+.salesTable table tbody .salesTable__row.salesTable__row_second td {
+  background-color: var(--red-slick);
+}
+
+.salesTable table tbody .salesTable__row.salesTable__row_third td {
+  background-color: var(--base8-slick);
+}
+
+.salesTable table thead .salesTable__row.salesTable__row_fourth th {
+  background-color: var(--base6);
+}
+
+.salesTable table thead th {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  white-space: nowrap;
+  border-right: 1px solid rgba(144, 144, 144, 0.4);
+  border-bottom: 1px solid rgba(144, 144, 144, 0.4);
+  background: #1f2839;
+  font-size: 14px;
+}
+
+.salesTable table thead th:last-child {
+  border-right: 0;
+}
+
+.salesTable table .blue-text {
+  color: var(--blue);
+}
+
+.salesTable table .green-text {
+  color: var(--green);
+}
+
+.salesTable table .red-text {
+  color: var(--red);
+}
+
+.salesTable table tbody td {
+  padding: 5px 10px;
+  text-align: center;
+  border-right: 1px solid rgba(144, 144, 144, 0.4);
+  border-bottom: 1px solid rgba(144, 144, 144, 0.4);
+  background: #1f2839;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.salesTable table tbody tr:nth-child(2n) td {
+  /* background: rgba(95, 101, 115, 0.2); */
+}
+
+.salesTable table tbody td:first-child {
+  text-align: left;
+  /* background: #1F2839 !important; */
+}
+
+.salesTable table tbody td:last-child {
+  border-right: 0;
+}
+
+.salesTable table tbody td.title-block {
+  /* background: #565E6C !important; */
+}
+
+
+/*.salesTable__table-thead {*/
+/*  background: #1F2839;*/
+/*}*/
+
+/*.salesTable__table-thead thead tr th  {*/
+/*  background: #1F2839;*/
+/*}*/

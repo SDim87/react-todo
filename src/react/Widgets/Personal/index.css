@@ -1,0 +1,158 @@
+.personal {
+  display: flex;
+  margin: 0 25px;
+}
+
+.personal__container {
+  border-radius   : 5px;
+  align-self: flex-start;
+}
+
+.personal__container_first {
+  width       : 60%;
+  margin-right: 20px;
+}
+
+.personal__container_second {
+  width: 40%;
+}
+
+.personal__section {
+  background-color: var(--base4);
+  border-radius   : 5px;
+  margin-bottom: 40px;
+}
+
+.personal__header {
+  box-sizing             : border-box;
+  min-height             : 61px;
+  padding                : 20px;
+  border-top-left-radius : 5px;
+  border-top-right-radius: 5px;
+  background-color: var(--base9);
+}
+
+.personal__title {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.personal__title_indent {
+  margin-bottom: 10px;
+}
+
+.personal__content {
+  display: flex;
+  padding: 20px 30px;
+}
+
+.personal__content_second {
+  display: block;
+}
+
+.personal__ava {
+  max-width   : 185px;
+  margin-right: 20px;
+}
+
+.personal__img-box {
+  overflow: hidden;
+  width: 185px;
+  height: 185px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.personal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.personal__btn {
+  width: 100%;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--base0);
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  background-color: var(--blue);
+  font-size: 13px;
+  line-height: 36px;
+}
+
+.personal__btn:hover,
+.personal__btn:focus {
+  background-color: transparent;
+}
+
+.personal__article:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.personal__inputs-box {
+  display: flex;
+
+  flex-wrap      : wrap;
+  justify-content: space-between;
+}
+
+.personal__inputs-box>div {
+  width: 47%;
+}
+
+.personal__date-container {
+  margin: 40px 0;
+}
+
+.personal__date {
+  display: flex;
+
+  align-items    : center;
+  justify-content: space-between;
+}
+
+.personal__date:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.personal__arms {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal__arms-wrap {
+  display   : flex;
+  margin: 10px 0 0 -20px;
+
+  flex-wrap: wrap;
+}
+
+.personal__arms-btn {
+  width: 127px;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.personal__inputs-pass {
+  display: flex;
+  flex-direction: column;
+}
+
+.personal__inputs-pass .input-info {
+  width: 47%;
+}
+
+.personal__inputs-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal__btn-pass {
+  align-self: flex-end;
+  width: 127px;
+  margin-top: 40px;
+}

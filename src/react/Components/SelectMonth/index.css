@@ -1,0 +1,66 @@
+.month-select{
+   margin-right: 30px;
+  padding: 7px 0;
+
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgba(144,144,144,0.4);
+  background: transparent;
+
+  font-size: 15px;
+}
+
+.month-select option{
+  color: white;
+  border: none;
+  outline: none;
+  background: #5F6573;
+
+  line-height: 15px;
+}
+
+/* Артём поправь анимацию перекраса иконки при ховере */
+.select-month__wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.select-month__wrapper > button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.select-month__btn-sim{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 20px;
+  padding: 0 10px;
+}
+
+.select-month__wrapper > .select-month__btn-sim:hover .date-select__icon::before{
+  color: white;
+}
+
+.select-month__wrapper > .select-month__btn-sim:focus .date-select__icon::before{
+  color: white;
+}
+
+.select-month__btn-sim{
+  width: 100%;
+  padding: 0 10px;
+
+  cursor: pointer;
+  transition: var(--transition);
+
+  color: var(--base0);
+  border: 1px solid var(--blue);
+  border-radius: 20px;
+
+  font-size: 13px;
+  height: 30px;
+}
+.select-month__btn-sim:focus,
+.select-month__btn-sim:hover{
+  background-color: var(--blue);
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_operator_rate_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_requests_main_services_count_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_objects_connected_main_services_count_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_objects_requests_connected_conversion_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_objects_requests_extra_services_count_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_objects_connected_extra_services_count_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "SmallWidget",
+    "serverName": "widget_objects_work_hours_director",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": false,
+        "submenu": true,
+        "staticWidget": true,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "Employment",
+    "serverName": "widget_employment_director",
+    "configuration": {
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "w": 3,
+        "h": 4
+      },
+      "settings": {
+        "calendar": true,
+        "submenu": true,
+        "staticWidget": false,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "AppBasicServices",
+    "serverName": "widget_requests_main_services_count_director_graph",
+    "configuration": {
+      "coordinates": {
+        "x": 3,
+        "y": 0,
+        "w": 3,
+        "h": 4
+      },
+      "settings": {
+        "calendar": true,
+        "submenu": true,
+        "staticWidget": false,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "AppAddServices",
+    "serverName": "widget_objects_requests_extra_services_count_director_graph",
+    "configuration": {
+      "coordinates": {
+        "x": 6,
+        "y": 0,
+        "w": 3,
+        "h": 4
+      },
+      "settings": {
+        "calendar": true,
+        "submenu": true,
+        "staticWidget": false,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "Efficiency",
+    "serverName": "widget_efficiency_director",
+    "configuration": {
+      "coordinates": {
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": true,
+        "submenu": true,
+        "staticWidget": false,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "Agreement",
+    "serverName": "widget_connected_services_director",
+    "configuration": {
+      "coordinates": {
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "settings": {
+        "calendar": true,
+        "submenu": true,
+        "staticWidget": false,
+        "helper": true
+      }
+    }
+  },
+  {
+    "clientName": "ConnectedServices",
+    "serverName": "widget_objects_connected_main_services_count_director_graph",
+    "configuration": {
+      "coordinates": {
+        "x": 9,
+        "y": 0,
+        "w": 3,
+        "h": 4
+      },
+      "settings": {
+        "calendar": true,
+        "submenu": true,
+        "staticWidget": false,
+        "helper": true
+      }
+    }
+  }
+]

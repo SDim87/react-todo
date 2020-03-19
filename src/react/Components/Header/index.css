@@ -1,0 +1,31 @@
+.app__header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.button_help {
+  width: 20px;
+  height: 20px;
+  color: var(--base3);
+  padding: 0;
+  margin: 0;
+  margin-right: 20px;
+  border: 0;
+  background: transparent;
+}
+
+.app__header-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app__header-col {
+  display: flex;
+  align-items: center;
+}
+

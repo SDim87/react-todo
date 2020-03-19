@@ -1,0 +1,122 @@
+.import-data {
+  color: var(--base0);
+  /* border: 1px solid var(--base0); */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.import-data__container {
+  display: flex;
+  margin-left: -20px;
+}
+
+.import-data__head {
+  display: flex;
+  min-height: 47px;
+  padding: 0 20px;
+  color: var(--base0);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: var(--base6);
+  font-size: 18px;
+  line-height: 35px;
+  font-weight: 400;
+
+  align-items: center;
+}
+
+.import-data__body {
+  padding: 40px;
+  background-color: var(--base5);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  /* height: calc(100% - 47px); */
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.import-data__file {
+  display: flex;
+  margin-bottom: 50px;
+
+  align-items: center;
+}
+
+.import-data__file span {
+  margin-right: 20px;
+}
+
+.import-data__load {
+  display: block;
+  width: 180px;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  background: transparent;
+  font-size: 13px;
+  line-height: 38px;
+}
+
+.import-data__selects {
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;
+  margin-bottom: 40px;
+}
+
+.import-data__box {
+  margin-top: auto;
+  align-self: flex-end;
+
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.import-data__box button {
+  width: 100%;
+  max-width: 230px;
+  min-width: 120px;
+}
+
+.import-data__box button:not(:first-child) {
+  margin-left: 20px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .import-data__container {
+    display: block;
+    margin-left: 0;
+  }
+
+  .import-data {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.import-data__btn {
+  border: 1px solid var(--blue);
+  line-height: 38px;
+  color: var(--base0);
+  font-size: 16px;
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.import-data__btn_first {
+  background-color: var(--blue);
+}
+
+.import-data__btn_second {
+  background-color: transparent;
+}
+
+
+
