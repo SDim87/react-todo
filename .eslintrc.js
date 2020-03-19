@@ -33,6 +33,7 @@ module.exports = {
         ignoredNodes: ['JSXElement *'],
       },
     ],
+    'template-curly-spacing' : 'off',
     'linebreak-style': 'off', // Неправильно работает в Windows.
     'quotes': ['error', 'single'],
     'semi': 'off',
@@ -47,7 +48,6 @@ module.exports = {
     'no-mixed-operators': 'off', // Несовместимо с prettier
     'space-before-function-paren': 0, // Несовместимо с prettier
     'no-nested-ternary': 'off',
-    'template-curly-spacing' : 'off',
     'arrow-body-style': 'off',
     // 'indent' : 'off',
     // 'no-restricted-syntax': ['error', 'WithStatement', 'BinaryExpression[operator='in']'],

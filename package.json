@@ -41,6 +41,7 @@
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@babel/traverse": "^7.8.6",
+    "@babel/types": "^7.8.7",
     "autoprefixer": "^9.7.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
@@ -84,8 +85,5 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
-  },
-  "resolutions": {
-    "@babel/types": "^7.8.7"
   }
 }
