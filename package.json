@@ -33,12 +33,12 @@
     "not ie > 0"
   ],
   "devDependencies": {
-    "@babel/core": "^7.7.4",
+    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/plugin-transform-spread": "^7.8.3",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.8.0",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
     "autoprefixer": "^9.7.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
