@@ -15,18 +15,16 @@ export class MenuItem {
     // console.log(parent, acronim)
     if (acronim === 'main') {
       return '/main'
-    } else if (parent) {
+    } if (parent) {
       return `/main/${this.generateUrl(parent)}/${this.generateUrl(acronim)}`
-    } else {
-      return `/main/${this.generateUrl(acronim)}`
     }
+    return `/main/${this.generateUrl(acronim)}`
   }
 
   generateUrl = acronim => {
     if (acronim.match('_')) {
       return `${acronim.split('_').join('-')}`
-    } else {
-      return `${acronim}`
     }
+    return `${acronim}`
   }
 }

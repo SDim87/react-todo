@@ -19,15 +19,15 @@ export async function authorization(login, password, event) {
     addURL: 'login',
     data: {
       grant_type: 'password',
-      password: password,
+      password,
       username: login,
-      client_id: client_id,
-      client_secret: client_secret,
+      client_id,
+      client_secret,
     },
   })
 
   // set new user status = obj with authStatus(true/false)
-  let authStatus = false
+  const authStatus = false
   // check status.code
   if (requestResult.status.code === 200) {
     // set new user = obj with userdata
@@ -50,11 +50,11 @@ export async function authorization(login, password, event) {
         period_begin: `${startDate.getFullYear()}-${
           startDate.getMonth() + 1 >= 10
             ? startDate.getMonth() + 1
-            : '0' + (startDate.getMonth() + 1)
-        }-${startDate.getDate() >= 10 ? startDate.getDate() : '0' + startDate.getDate()}`,
+            : `0${startDate.getMonth() + 1}`
+        }-${startDate.getDate() >= 10 ? startDate.getDate() : `0${startDate.getDate()}`}`,
         period_end: `${endDate.getFullYear()}-${
-          endDate.getMonth() + 1 >= 10 ? endDate.getMonth() + 1 : '0' + (endDate.getMonth() + 1)
-        }-${endDate.getDate() >= 10 ? endDate.getDate() : '0' + endDate.getDate()}`,
+          endDate.getMonth() + 1 >= 10 ? endDate.getMonth() + 1 : `0${endDate.getMonth() + 1}`
+        }-${endDate.getDate() >= 10 ? endDate.getDate() : `0${endDate.getDate()}`}`,
       }
     }
     setGlobalDates(getPeriod())

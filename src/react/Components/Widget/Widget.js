@@ -8,6 +8,7 @@ import widgetContentFunction from '../../Controller/WidgetContent'
 import './index.css'
 
 const help = require('../../assets/help.svg')
+
 const { setWidgetData } = actions
 
 const Widget = ({ clientName, widgets, widgetData, currentArm }) => {
@@ -45,7 +46,7 @@ const Widget = ({ clientName, widgets, widgetData, currentArm }) => {
       widgetContentFunction(acronim, { period_begin, period_end })
         .then(res => {
           const curWidget = widgetData[acronim]
-          curWidget['data'] = { ...res.data[acronim].content }
+          curWidget.data = { ...res.data[acronim].content }
           setWidgetData({ ...curWidget })
         })
         .then(() => {
@@ -77,9 +78,8 @@ const Widget = ({ clientName, widgets, widgetData, currentArm }) => {
         }
 
         return `${b.join(' ')} - ${e.join(' ')}`
-      } else {
-        return null
       }
+      return null
     }
 
     const content = (
@@ -126,7 +126,7 @@ const Widget = ({ clientName, widgets, widgetData, currentArm }) => {
 const mapStateToProps = ({ armData, widgetData, systemData }) => {
   return {
     widgets: armData.moduleData.widgets,
-    widgetData: widgetData,
+    widgetData,
     currentArm: systemData.currentArm,
   }
 }

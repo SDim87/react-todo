@@ -6,9 +6,7 @@ const ConvertAppIntoServices = ({ text }) => {
   const [requestResult, setRequestResult] = useState('')
 
   useEffect(() => {
-    widgetContentFunction('widget_converting_applications_into_services').then(res =>
-      setRequestResult(res),
-    )
+    widgetContentFunction('widget_converting_applications_into_services').then(res => setRequestResult(res),)
   }, [])
 
   if (requestResult) {
@@ -25,9 +23,8 @@ const ConvertAppIntoServices = ({ text }) => {
         </div>
       </div>
     )
-  } else {
-    return <Spinner />
   }
+  return <Spinner />
 }
 
 export default ConvertAppIntoServices

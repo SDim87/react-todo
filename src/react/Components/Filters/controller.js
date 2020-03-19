@@ -10,12 +10,12 @@ export async function getFilters() {
     method: 'POST',
     addURL: 'filters/get',
     data: {
-      user_id: user_id,
+      user_id,
     },
   })
-  const data = requestResult.data
+  const { data } = requestResult
   const newResultData = {}
-  for (let key in data) {
+  for (const key in data) {
     const newArr = []
     data[key].forEach(el => {
       newArr.push({ ...el, selected: true })

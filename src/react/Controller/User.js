@@ -23,6 +23,5 @@ export default class User {
   setFullName = () => `${this.first_name} ${this.middle_name} ${this.surname}`
 
   // full_name method
-  setSearchField = () =>
-    `${this.first_name} ${this.middle_name} ${this.surname} ${this.login}`.toLowerCase()
+  setSearchField = () => `${this.first_name} ${this.middle_name} ${this.surname} ${this.login}`.toLowerCase()
 }

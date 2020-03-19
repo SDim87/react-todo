@@ -52,13 +52,13 @@ class Conversion extends React.Component {
   colorMaker = () => {
     if (this.RSD <= this.segments[1] && this.RSD > this.segments[0]) {
       return { color: '#FA4B4B' }
-    } else if (this.RSD <= this.segments[2] && this.RSD > this.segments[1]) {
+    } if (this.RSD <= this.segments[2] && this.RSD > this.segments[1]) {
       return { color: '#FFCA08' }
-    } else if (this.RSD <= this.segments[3] && this.RSD > this.segments[2]) {
+    } if (this.RSD <= this.segments[3] && this.RSD > this.segments[2]) {
       return { color: '#04A881' }
-    } else if (this.RSD <= this.segments[4] && this.RSD > this.segments[3]) {
+    } if (this.RSD <= this.segments[4] && this.RSD > this.segments[3]) {
       return { color: '#FFCA08' }
-    } else if (this.RSD <= this.segments[5] && this.RSD > this.segments[4]) {
+    } if (this.RSD <= this.segments[5] && this.RSD > this.segments[4]) {
       return { color: '#FA4B4B' }
     }
   }
@@ -94,7 +94,7 @@ class Conversion extends React.Component {
         />
 
         <p style={this.colorMaker()} className="Conversion_num">
-          {+_widgetData.current_value + '%'}
+          {`${+_widgetData.current_value}%`}
         </p>
         <div className="widget__footer">
           <div className="widget__place">Ростелеком, Урал</div>

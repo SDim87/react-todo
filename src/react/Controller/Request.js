@@ -26,8 +26,8 @@ function request(settings) {
     request.setRequestHeader('Accept', 'application/json')
 
     if (Store.getState().systemData.authStatus) {
-      const tokenData = Store.getState().systemData.tokenData
-      request.setRequestHeader(`Authorization`, `${tokenData.token_type} ${tokenData.access_token}`)
+      const { tokenData } = Store.getState().systemData
+      request.setRequestHeader('Authorization', `${tokenData.token_type} ${tokenData.access_token}`)
     }
 
     request.send(JSON.stringify(settings.data))
@@ -55,7 +55,7 @@ export function sendFile(file) {
     const request = new XMLHttpRequest()
     const defaultApiAdress = 'http://192.168.77.101:8090/'
     const baseURL = defaultApiAdress
-    request.open('POST', baseURL + 'eissd/upload')
+    request.open('POST', `${baseURL}eissd/upload`)
     request.setRequestHeader('Access-Control-Allow-Origin', '*')
     const newFormData = new FormData()
     newFormData.append('file', file)
@@ -63,8 +63,8 @@ export function sendFile(file) {
     // if true it means user have a access_token and refresh_token
     // so we can put it in the additional header
     if (Store.getState().systemData.authStatus) {
-      const tokenData = Store.getState().systemData.tokenData
-      request.setRequestHeader(`Authorization`, `${tokenData.token_type} ${tokenData.access_token}`)
+      const { tokenData } = Store.getState().systemData
+      request.setRequestHeader('Authorization', `${tokenData.token_type} ${tokenData.access_token}`)
     } else {
       // console.log("headers is not defined");
     }

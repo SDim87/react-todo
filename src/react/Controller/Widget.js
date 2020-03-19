@@ -18,37 +18,36 @@ export default class Widget {
     this.addParams = this.setAddParams()
   }
 
-  //// get some data from WidgetConfiguration.json
+  // // get some data from WidgetConfiguration.json
   // get helper status
   setHelper = () => {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.settings.helper
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
+
   // get calendar status
   setCalendar = () => {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.settings.calendar
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
+
   // get clientName
   setClientName = () => {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.clientName
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
@@ -58,9 +57,8 @@ export default class Widget {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.coordinates
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
@@ -70,9 +68,8 @@ export default class Widget {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.settings.staticWidget
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
@@ -82,9 +79,8 @@ export default class Widget {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.settings.submenu
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
@@ -94,9 +90,8 @@ export default class Widget {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.data
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }
@@ -106,9 +101,8 @@ export default class Widget {
     const newData = WidgetConfiguration.map(el => {
       if (el.serverName === this.acronim) {
         return el.configuration.additional_params
-      } else {
-        return null
       }
+      return null
     })
     return newData.filter(el => el !== null)[0]
   }

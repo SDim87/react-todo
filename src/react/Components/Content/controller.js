@@ -9,8 +9,8 @@ const { setModuleData, setMenuItems } = actions
 // default content data
 export async function getData() {
   if (Store.getState() && Store.getState().systemData.currentArm) {
-    const currentRole = Store.getState().systemData.currentRole
-    const currentArm = Store.getState().systemData.currentArm
+    const { currentRole } = Store.getState().systemData
+    const { currentArm } = Store.getState().systemData
 
     const requestResult = await requestMethod({
       method: 'POST',
@@ -29,8 +29,8 @@ export async function getData() {
 
 // !== main module data
 export async function getModuleContent(moduleAcronim, menuItems) {
-  const currentRole = Store.getState().systemData.currentRole
-  const currentArm = Store.getState().systemData.currentArm
+  const { currentRole } = Store.getState().systemData
+  const { currentArm } = Store.getState().systemData
   let returnValue
   requestMethod({
     method: 'POST',
@@ -58,7 +58,7 @@ export async function getModuleContent(moduleAcronim, menuItems) {
 }
 
 const currentModule = requestResult => {
-  for (let key in requestResult.data) {
+  for (const key in requestResult.data) {
     if (requestResult.data[key].widgets) {
       return requestResult.data[key]
     }
@@ -68,10 +68,10 @@ const currentModule = requestResult => {
 // Генерим пункты меню с урлами, названиями страниц и записываем
 const generateMenuItems = requestResult => {
   const menuItems = []
-  for (let key in requestResult.data) {
+  for (const key in requestResult.data) {
     const generateSubModules = (obj, parentObjValue) => {
       const subModules = []
-      for (let key in obj) {
+      for (const key in obj) {
         subModules.push(new MenuItem(obj[key], parentObjValue))
       }
       return subModules

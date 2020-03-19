@@ -25,11 +25,11 @@ export function setDatePeriod(month) {
   const endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0)
   const period = {
     period_begin: `${startDate.getFullYear()}-${
-      startDate.getMonth() + 1 >= 10 ? startDate.getMonth() + 1 : '0' + (startDate.getMonth() + 1)
-    }-${startDate.getDate() >= 10 ? startDate.getDate() : '0' + startDate.getDate()}`,
+      startDate.getMonth() + 1 >= 10 ? startDate.getMonth() + 1 : `0${startDate.getMonth() + 1}`
+    }-${startDate.getDate() >= 10 ? startDate.getDate() : `0${startDate.getDate()}`}`,
     period_end: `${endDate.getFullYear()}-${
-      endDate.getMonth() + 1 >= 10 ? endDate.getMonth() + 1 : '0' + (endDate.getMonth() + 1)
-    }-${endDate.getDate() >= 10 ? endDate.getDate() : '0' + endDate.getDate()}`,
+      endDate.getMonth() + 1 >= 10 ? endDate.getMonth() + 1 : `0${endDate.getMonth() + 1}`
+    }-${endDate.getDate() >= 10 ? endDate.getDate() : `0${endDate.getDate()}`}`,
   }
   setGlobalDates({ ...period })
 }

@@ -14,16 +14,16 @@ export async function reportDataRequest(hookFunc, filters, reportData) {
 
   const { result, filter, total } = requestResult.data
 
-  for (let key in filter) {
+  for (const key in filter) {
     filter[key].list = filter[key].list.map(el => (el = { ...el, selected: false }))
   }
 
   setWidgetContent({ filter: filters ? reportData.filter : filter })
 
   hookFunc({
-    result: result,
+    result,
     filter: filters ? reportData.filter : filter,
-    total: total,
+    total,
   })
 }
 

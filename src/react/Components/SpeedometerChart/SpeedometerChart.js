@@ -142,10 +142,10 @@ const Speedometer = (_data, element) => {
 
     segments.push(lastValue)
 
-    const testMax = segments.filter(function(number) {
+    const testMax = segments.filter((number) => {
       return number >= curerntValue()
     })
-    const testMin = segments.filter(function(number) {
+    const testMin = segments.filter((number) => {
       return number <= curerntValue()
     })
 
@@ -158,21 +158,19 @@ const Speedometer = (_data, element) => {
       }
       if (curerntValue() === testMin[testMin.length - 1]) {
         return 0.001
-      } else {
-        return (
-          ((curerntValue() - testMin[testMin.length - 1]) /
-            (testMax[0] - testMin[testMin.length - 1])) *
-          100
-        )
       }
+      return (
+        ((curerntValue() - testMin[testMin.length - 1])
+            / (testMax[0] - testMin[testMin.length - 1]))
+          * 100
+      )
     }
 
     const absoluteSeg = () => {
       if (startCurSeg[0] < 0 && startCurSeg[1] > 0) {
         return Math.abs(startCurSeg[0]) + startCurSeg[1]
-      } else {
-        return Math.abs(Math.abs(startCurSeg[1]) - Math.abs(startCurSeg[0]))
       }
+      return Math.abs(Math.abs(startCurSeg[1]) - Math.abs(startCurSeg[0]))
     }
 
     const segProcentage = (absoluteSeg() / 100) * percent()
@@ -188,7 +186,7 @@ const Speedometer = (_data, element) => {
     const arrow = svg
       .append('g')
       .attr('transform-origin', 'center center')
-      .attr('transform', function() {
+      .attr('transform', () => {
         return `rotate(${segmentDetection().rotate})`
       })
 
@@ -276,7 +274,7 @@ const Speedometer = (_data, element) => {
       .attr('stroke-width', '0.5em')
       .attr('cursor', 'pointer')
       .on('mouseover', () => {
-        const target = d3.event.target
+        const { target } = d3.event
         const x = d3.mouse(target)[0]
         const y = d3.mouse(target)[1]
 
@@ -293,7 +291,7 @@ const Speedometer = (_data, element) => {
           .attr('transform', `translate(${x + 11},${y + 10})`)
       })
       .on('mousemove', () => {
-        const target = d3.event.target
+        const { target } = d3.event
         const x = d3.mouse(target)[0]
         const y = d3.mouse(target)[1]
 
@@ -402,7 +400,7 @@ const Speedometer = (_data, element) => {
       .attr('stroke-width', '0.5em')
       .attr('cursor', 'pointer')
       .on('mouseover', () => {
-        const target = d3.event.target
+        const { target } = d3.event
         const x = d3.mouse(target)[0]
         const y = d3.mouse(target)[1]
 
@@ -421,7 +419,7 @@ const Speedometer = (_data, element) => {
           .attr('transform', `translate(${x + 11},${y + 10})`)
       })
       .on('mousemove', () => {
-        const target = d3.event.target
+        const { target } = d3.event
         const x = d3.mouse(target)[0]
         const y = d3.mouse(target)[1]
 
@@ -518,7 +516,7 @@ const Speedometer = (_data, element) => {
       .attr('stroke-width', '0.5em')
       .attr('cursor', 'pointer')
       .on('mouseover', () => {
-        const target = d3.event.target
+        const { target } = d3.event
         const x = d3.mouse(target)[0]
         const y = d3.mouse(target)[1]
 
@@ -537,7 +535,7 @@ const Speedometer = (_data, element) => {
           .attr('pointer-events', 'none')
       })
       .on('mousemove', () => {
-        const target = d3.event.target
+        const { target } = d3.event
         const x = d3.mouse(target)[0]
         const y = d3.mouse(target)[1]
 

@@ -7,7 +7,7 @@ import WidgetSubmenu from '../../Components/WidgetSubmenu'
 import { ReactComponent as QuestMarkIcon } from '../../assets/svg/ques-mark.svg'
 
 import './index.css'
-import './../../Components/Helpers/icon.css'
+import '../../Components/Helpers/icon.css'
 
 const { setWidgetData } = actions
 
@@ -43,7 +43,7 @@ const SmallWidget = ({ serverName, widgets, widgetData, currentArm }) => {
 
       widgetContentFunction(acronim, { period_begin, period_end }).then(res => {
         const curWidget = widgetData[acronim]
-        curWidget['data'] = { ...res.data[acronim].content }
+        curWidget.data = { ...res.data[acronim].content }
         setWidgetData({
           ...curWidget,
         })
@@ -53,10 +53,9 @@ const SmallWidget = ({ serverName, widgets, widgetData, currentArm }) => {
   }, [widgetData[acronim].filtersByDates])
 
   const content = () => {
-    const widgetContent =
-      widgetData[acronim].data.target && widgetData[acronim].data.current
-        ? widgetData[acronim].data
-        : null
+    const widgetContent = widgetData[acronim].data.target && widgetData[acronim].data.current
+      ? widgetData[acronim].data
+      : null
 
     const {
       target = { name: '', value: '' },
@@ -112,7 +111,7 @@ const mapStateToProps = ({ armData, widgetData, systemData }) => {
   if (armData.moduleData) {
     return {
       widgets: armData.moduleData.widgets,
-      widgetData: widgetData,
+      widgetData,
       currentArm: systemData.currentArm,
     }
   }

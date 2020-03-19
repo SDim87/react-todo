@@ -2,17 +2,17 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 6,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
-      legacyDecorators: true
+      experimentalObjectRestSpread: true,
     },
   },
   env: {
     es6: true,
     browser: true,
-    // node: true,
+    node: true,
   },
   extends: ['airbnb-base', 'plugin:react/recommended', 'plugin:import/react'],
   plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
@@ -54,6 +54,8 @@ module.exports = {
     'comma-dangle': 'off',
     'import/no-named-as-default': 'off',
     'import/prefer-default-export': 'off',
+    // 'import/no-dynamic-require': 'off',
+    // 'global-require': 'off',
     'import/no-named-as-default-member': 'off',
     'key-spacing': [
       'error',
@@ -63,6 +65,7 @@ module.exports = {
         mode: 'strict',
       },
     ],
+    // "strict": 0,
     'space-in-parens': ['error', 'never'],
     'prefer-const': ['error'],
     'prefer-template': ['error'],

@@ -2,19 +2,19 @@ import * as d3 from 'd3'
 
 export const makeChart = (data, element, _width, _height) => {
   // Декларация D3
-  const svg = d3.select(element),
-    margin = {
-      top: 20,
-      right: 20,
-      bottom: 30,
-      left: 40,
-    },
-    width = Math.round(_width - margin.left - margin.right),
-    height = Math.round(_height - margin.top - margin.bottom) - 50
+  const svg = d3.select(element);
+  const margin = {
+    top: 20,
+    right: 20,
+    bottom: 30,
+    left: 40,
+  };
+  const width = Math.round(_width - margin.left - margin.right);
+  const height = Math.round(_height - margin.top - margin.bottom) - 50
 
   // Установка размеров графика
-  const x = d3.scaleBand().rangeRound([0, width]),
-    y = d3.scaleLinear().rangeRound([height, 0])
+  const x = d3.scaleBand().rangeRound([0, width]);
+  const y = d3.scaleLinear().rangeRound([height, 0])
 
   // Установка тега для последующего построения графика
   const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
@@ -100,7 +100,7 @@ export const makeChart = (data, element, _width, _height) => {
 
   // Обработка даннх для выстраивания оси Х
   x.domain(
-    data.map(function(d) {
+    data.map((d) => {
       return d.name
     }),
   )
@@ -108,7 +108,7 @@ export const makeChart = (data, element, _width, _height) => {
   // Обработка даннх для выстраивания оси У, где (d.full / 10) - переменная удлиняющая ось У
   y.domain([
     0,
-    d3.max(data, function(d) {
+    d3.max(data, (d) => {
       const max = d.full + d.full / 10
       return max
     }),
@@ -118,8 +118,8 @@ export const makeChart = (data, element, _width, _height) => {
   g.append('g')
     .attr('style', 'color: transparent; font-size: 13px; max-width: 50px; word-wrap: wrap')
     .attr('class', 'axis axis--x')
-    .attr('transform', 'translate(0,' + height / 2 + ')')
-    .attr('transform', 'translate(0,' + height + ')')
+    .attr('transform', `translate(0,${height / 2})`)
+    .attr('transform', `translate(0,${height})`)
     .call(d3.axisBottom(x))
 
   // Отрисовка кастомных значений оси Х
@@ -127,11 +127,11 @@ export const makeChart = (data, element, _width, _height) => {
     .data(data)
     .append('text')
     .attr('class', 'brig')
-    .text(function(d) {
+    .text((d) => {
       const ar = d.name.split(' ')
       return ar[0]
     })
-    .attr('transform', `translate(0, 20)`)
+    .attr('transform', 'translate(0, 20)')
     .attr('fill', 'var(--blue)')
     .attr('style', 'font-size: 0.9em')
 
@@ -139,9 +139,9 @@ export const makeChart = (data, element, _width, _height) => {
     .data(data)
     .append('text')
     .attr('class', 'brigName')
-    .attr('transform', `translate(0, 35)`)
+    .attr('transform', 'translate(0, 35)')
     .attr('fill', 'var(--blue)')
-    .text(function(d) {
+    .text((d) => {
       const ar = d.name.split(' ')
       return ar[1]
     })
@@ -173,7 +173,7 @@ export const makeChart = (data, element, _width, _height) => {
     .enter()
     .append('rect')
     .attr('class', 'bar_wrap')
-    .attr('x', function(d) {
+    .attr('x', (d) => {
       return x(d.name) + x.bandwidth() / 2.5
     })
     .attr('width', x.bandwidth() / 4)
@@ -187,27 +187,27 @@ export const makeChart = (data, element, _width, _height) => {
       .append('rect')
       .attr('class', Object.keys(data[i].value)[i])
       .attr('width', x.bandwidth() / 4)
-      .attr('data-month', function(d) {
+      .attr('data-month', (d) => {
         return d.name
       })
-      .attr('x', function(d) {
+      .attr('x', (d) => {
         return x(d.name) + x.bandwidth() / 2.5
       })
-      .attr('y', function(d) {
+      .attr('y', (d) => {
         switch (Object.keys(d.value)[i]) {
           case 'extra-equipment':
-            return y(d.full - d.value['SHPD'] - d.value['iptv'] - d.value['Telephony'])
+            return y(d.full - d.value.SHPD - d.value.iptv - d.value.Telephony)
           case 'Telephony':
-            return y(d.full - d.value['SHPD'] - d.value['iptv'])
+            return y(d.full - d.value.SHPD - d.value.iptv)
           case 'iptv':
-            return y(d.full - d.value['SHPD'])
+            return y(d.full - d.value.SHPD)
           case 'SHPD':
             return y(d.full)
           default:
             return new Error()
         }
       })
-      .attr('height', function(d) {
+      .attr('height', (d) => {
         return height - y(Object.values(d.value)[i])
       })
       .on('mouseover', e => {

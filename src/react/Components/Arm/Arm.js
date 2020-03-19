@@ -7,7 +7,7 @@ const { setCurrentArm, } = actions
 const Arm = props => {
   const { description, } = props.currentArm
   const { rememberArm, } = props
-  const image = require(`../../assets/arm_${rememberArm.id}.svg`)
+  const image = require(`../../../assets/arm_${rememberArm.id}.svg`)
 
   return (
     <label

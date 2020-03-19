@@ -16,10 +16,10 @@ const SelectMonth = ({ widgetData, systemData }) => {
     const month = date.toLocaleString('ru-RU', { month: 'long' })
     const setYear = currentMonth < el ? currentYear - 1 : currentYear
     return (
-      <option key={month} value={el}>{`${month[0].toUpperCase() +
-        month.slice(1) +
-        ' - ' +
-        setYear}`}</option>
+      <option key={month} value={el}>{`${`${month[0].toUpperCase()
+        + month.slice(1)
+        } - ${
+        setYear}`}`}</option>
     )
   })
 
@@ -87,8 +87,8 @@ const SelectMonth = ({ widgetData, systemData }) => {
 const mapStateToProps = ({ widgetData, systemData }) => {
   if (widgetData) {
     return {
-      widgetData: widgetData,
-      systemData: systemData,
+      widgetData,
+      systemData,
     }
   }
 }

@@ -12,12 +12,12 @@ export default class Module {
 
   // set route - parse this.acronim and replace "_" to "-"
   setRoute = () => {
-    return '/' + this.acronim.split(this.acronim.match('_') ? '_' : '').join('-')
+    return `/${this.acronim.split(this.acronim.match('_') ? '_' : '').join('-')}`
   }
 
   // connect request from server and WidgetConfiguration.json
   setWidgets = params => {
-    return params['widgets'].map(el => {
+    return params.widgets.map(el => {
       return new Widget(el)
     })
   }

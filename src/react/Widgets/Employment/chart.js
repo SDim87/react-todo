@@ -41,7 +41,7 @@ export const makeChart = (_data, element, _width, _height) => {
     currentValue
       .append('text')
       .text(`${data.worktime}%`)
-      .attr('fill', function() {
+      .attr('fill', () => {
         if (data.worktime <= 85) {
           return '#fa4b4b'
         }
@@ -58,7 +58,7 @@ export const makeChart = (_data, element, _width, _height) => {
 
     currentValue
       .append('text')
-      .text(`Занятость`)
+      .text('Занятость')
       .attr('text-anchor', 'middle')
       .attr('text-align', 'center')
       .attr('transform', `translate(${0}, ${10})`)
@@ -109,7 +109,7 @@ export const makeChart = (_data, element, _width, _height) => {
       .attr('cy', '-5px')
       .attr('fill', '#fa4b4b')
 
-    const pie = d3.pie().value(function(d) {
+    const pie = d3.pie().value((d) => {
       return d.value
     })
 
@@ -120,7 +120,7 @@ export const makeChart = (_data, element, _width, _height) => {
       .data(data_ready)
       .enter()
       .append('path')
-      .attr('class', function(d) {
+      .attr('class', (d) => {
         return d.data.key
       })
       .attr('transform', 'translate(0, -10)')
@@ -131,7 +131,7 @@ export const makeChart = (_data, element, _width, _height) => {
           .innerRadius(100)
           .outerRadius(92),
       )
-      .attr('fill', function(d) {
+      .attr('fill', (d) => {
         switch (d.data.key) {
           case 'worktime':
             return '#04a881'
@@ -143,7 +143,7 @@ export const makeChart = (_data, element, _width, _height) => {
             break
         }
       })
-      .text(function(p) {
+      .text((p) => {
         return p.data.key
       })
   }

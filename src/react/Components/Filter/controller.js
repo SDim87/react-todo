@@ -7,11 +7,10 @@ export function searchItems(data, searchValue) {
   return data.filter(el => {
     if (el.name) {
       return el.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
-    } else if (el.first_name) {
+    } if (el.first_name) {
       return el.first_name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
-    } else {
-      return el
     }
+    return el
   })
 }
 
@@ -38,13 +37,12 @@ export function selectFilter(
   const newReportData = filter[filterIdentificator].list.map(el => {
     if (el.name === filterName) {
       return { ...el, selected: filterItemCheckedStatus }
-    } else {
-      return el
     }
+    return el
   })
 
   setNewReportData({
-    result: result,
+    result,
     filter: {
       ...filter,
       [filterIdentificator]: {
@@ -52,7 +50,7 @@ export function selectFilter(
         list: newReportData,
       },
     },
-    total: total,
+    total,
   })
 
   const addFiltersFunction = data => {

@@ -84,7 +84,7 @@ const Reports = () => {
           elem.active = true
         }}
         key={elem.id}
-      >
+        >
         {elem.text}
       </li>
     )
@@ -94,8 +94,8 @@ const Reports = () => {
     const headerElements = []
     if (reportData && reportData.result) {
       const firstElementForHeaders = reportData.result[0]
-      for (let key in firstElementForHeaders) {
-        headerElements.push(firstElementForHeaders[key]['name'])
+      for (const key in firstElementForHeaders) {
+        headerElements.push(firstElementForHeaders[key].name)
       }
     }
     return headerElements.map(el => {
@@ -106,20 +106,19 @@ const Reports = () => {
   const tableData = () => {
     const colorizeRow = obj => {
       if (
-        obj.average_conversation_duration.value > 300 &&
-        obj.average_conversation_duration.value < 700
+        obj.average_conversation_duration.value > 300
+        && obj.average_conversation_duration.value < 700
       ) {
         return 'salesTable__row_first'
-      } else {
-        return 'salesTable__row_second'
       }
+      return 'salesTable__row_second'
     }
     const TDgenerate = el => {
       const rowArr = []
-      for (let key in el) {
-        const TDvalue = new ReportIndicator(el[key]['value'])
+      for (const key in el) {
+        const TDvalue = new ReportIndicator(el[key].value)
         if (key === 'number_of_calls') {
-          rowArr.push(<td key={key}>{el[key]['value']}</td>)
+          rowArr.push(<td key={key}>{el[key].value}</td>)
         } else {
           rowArr.push(<td key={key}>{TDvalue.hours > 1 ? TDvalue.hours : TDvalue.minutes}</td>)
         }
@@ -133,7 +132,7 @@ const Reports = () => {
     if (reportData && reportData.result) {
       const rowElements = reportData.result.map(el => {
         return (
-          <tr key={someId++} className={'salesTable__row ' + colorizeRow(el)}>
+          <tr key={someId++} className={`salesTable__row ${colorizeRow(el)}`}>
             {TDgenerate(el)}
           </tr>
         )

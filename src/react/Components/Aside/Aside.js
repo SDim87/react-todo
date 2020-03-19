@@ -45,31 +45,31 @@ const Aside = ({ menuItems }) => {
       const link = (
         <Link
           className="aside__link"
-          to={() => items[key]['finalUrl']}
+          to={() => items[key].finalUrl}
           onClick={() => setToggleAside(false)}
-        >
-          <i className={`aside__icon aside__icon_${items[key]['acronim']} material-icons`} />
-          <p className="aside__text">{items[key]['name']}</p>
+          >
+          <i className={`aside__icon aside__icon_${items[key].acronim} material-icons`} />
+          <p className="aside__text">{items[key].name}</p>
         </Link>
       )
 
       // Если элемент меню является ссылкой на субмодуль, то возвращаем div
       const div = (
         <div className="aside__link submodules" onClick={() => openSubmodules(items[key])}>
-          <i className={`aside__icon aside__icon_${items[key]['acronim']} material-icons`} />
-          <p className="aside__text">{items[key]['name']}</p>
+          <i className={`aside__icon aside__icon_${items[key].acronim} material-icons`} />
+          <p className="aside__text">{items[key].name}</p>
         </div>
       )
 
       // Возвращаем основную часть шаблона
       return (
-        <li className="aside__item" key={items[key]['acronim']}>
+        <li className="aside__item" key={items[key].acronim}>
           {items[key].submodules ? div : link}
         </li>
       )
     }
 
-    for (let key in items) array.push(template(items, key))
+    for (const key in items) array.push(template(items, key))
 
     return array
   }
