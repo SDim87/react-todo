@@ -6,6 +6,7 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
+      legacyDecorators: true
     },
   },
   env: {
@@ -26,14 +27,13 @@ module.exports = {
   // add your custom rules here
   rules: {
     indent: [
-      'error',
-      2,
+      'error', 2,
       {
         SwitchCase: 1,
         ignoredNodes: ['JSXElement *'],
       },
     ],
-    "linebreak-style": "off", // Неправильно работает в Windows.
+    'linebreak-style': 'off', // Неправильно работает в Windows.
     'quotes': ['error', 'single'],
     'semi': 'off',
     'no-var': 'error',
@@ -43,12 +43,12 @@ module.exports = {
     'array-bracket-spacing': ['error', 'never'],
     'no-unused-vars': ['error', { 'args': 'none' }], // не выдает ошибку при не использовании var
     // 'object-curly-newline': ['error', { 'multiline': true }],
-    "object-curly-newline": "off", // Несовместимо с prettier
-    "no-mixed-operators": "off", // Несовместимо с prettier
-    "space-before-function-paren": 0, // Несовместимо с prettier
+    'object-curly-newline': 'off', // Несовместимо с prettier
+    'no-mixed-operators': 'off', // Несовместимо с prettier
+    'space-before-function-paren': 0, // Несовместимо с prettier
     'no-nested-ternary': 'off',
     'template-curly-spacing' : 'off',
-    "arrow-body-style": "off",
+    'arrow-body-style': 'off',
     // 'indent' : 'off',
     // 'no-restricted-syntax': ['error', 'WithStatement', 'BinaryExpression[operator='in']'],
     'comma-dangle': 'off',
@@ -68,7 +68,7 @@ module.exports = {
     'prefer-template': ['error'],
     'prefer-arrow-callback': ['error'],
     // 'arrow-parens': ['error', 'as-needed'],
-    "arrow-parens": "off",
+    'arrow-parens': 'off',
     'camelcase': 'off',
     'no-console': 'off',
     'no-alert': 'off',
@@ -97,7 +97,7 @@ module.exports = {
     'react/jsx-indent-props': ['error', 2],
     'react/display-name': 0,
     'react/prop-types': 'off',
-    // "react/require-default-props": "off", // airbnb использует уведомление об ошибке
-    // "react/forbid-prop-types": "off" // airbnb использует уведомление об ошибке
+    // 'react/require-default-props': 'off', // airbnb использует уведомление об ошибке
+    // 'react/forbid-prop-types': 'off' // airbnb использует уведомление об ошибке
   },
 }
