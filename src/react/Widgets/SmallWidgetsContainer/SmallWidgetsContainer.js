@@ -9,7 +9,7 @@ const { setWidgetData } = actions
 const SmallWidgetsContainer = ({ widgets, globalDates }) => {
   const widgetsArr = widgets
     .filter(el => el.type === 'brief')
-    .sort((a, b) => (a.sort > b.sort ? 1 : -1))
+    .sort((elA, elB) => (elA.sort > elB.sort ? 1 : -1))
     .map(({ clientName, acronim }) => {
       // Динамический импорт компонента
       const DynamicComponent = React.lazy(() => import(`../../Widgets/${clientName}`))

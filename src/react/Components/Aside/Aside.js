@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import './index.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 const Aside = ({ menuItems }) => {
-  const logo = require('../../assets/logo.svg')
-  const logoSmall = require('../../assets/logo_small.svg')
+  const logo = require('../../../assets/svg/logo.svg')
+  const logoSmall = require('../../../assets/svg/logo_small.svg')
 
   // Состояние поведения панели, false по умолчанию (свернута)
   const [toggleAside, setToggleAside] = useState(false)
@@ -69,7 +69,11 @@ const Aside = ({ menuItems }) => {
       )
     }
 
-    for (const key in items) array.push(template(items, key))
+    for (const key in items) {
+      if (Object.prototype.hasOwnProperty.call(items, key)) {
+        array.push(template(items, key))
+      }
+    }
 
     return array
   }

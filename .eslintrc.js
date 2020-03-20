@@ -49,13 +49,16 @@ module.exports = {
     'space-before-function-paren': 0, // Несовместимо с prettier
     'no-nested-ternary': 'off',
     'arrow-body-style': 'off',
+    'no-shadow': 'off',
     // 'indent' : 'off',
-    // 'no-restricted-syntax': ['error', 'WithStatement', 'BinaryExpression[operator='in']'],
+    'no-restricted-syntax': ['error', 'WithStatement', 'BinaryExpression[operator="in"]'],
     'comma-dangle': 'off',
     'import/no-named-as-default': 'off',
     'import/prefer-default-export': 'off',
-    // 'import/no-dynamic-require': 'off',
-    // 'global-require': 'off',
+    'import/no-dynamic-require': 'off',
+    'global-require': 'off',
+    'no-return-assign': 'off', // вкл присваивание в return
+    'no-param-reassign': 'off', // вкл изменение параметров функций
     'import/no-named-as-default-member': 'off',
     'key-spacing': [
       'error',

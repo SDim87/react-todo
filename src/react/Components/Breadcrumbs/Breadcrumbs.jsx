@@ -1,12 +1,11 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom'
 import './index.css'
 import { connect } from 'react-redux'
 
 const Breadcrumbs = ({ currentUrl, menuItems }) => {
-
   /**
-   * Генерим бредкрамбсы на основе currentUrl 
+   * Генерим бредкрамбсы на основе currentUrl
    * Соотносим с menuItems
    */
   const breadCrumbsGenerate = () => {
@@ -24,7 +23,13 @@ const Breadcrumbs = ({ currentUrl, menuItems }) => {
     // eslint-disable-next-line
     const breadCrumbsItems = someArr.map((el, index) => {
       return (
-        <li key={index} className="breadcrumbs__item" itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
+        <li
+          key={index}
+          className="breadcrumbs__item"
+          itemProp="itemListElement"
+          itemScope
+          itemType="http://schema.org/ListItem"
+          >
           <Link className="breadcrumbs__link" to={el.finalUrl} itemProp="item">
             <span itemProp="name">{el.name}</span>
           </Link>
@@ -44,10 +49,10 @@ const Breadcrumbs = ({ currentUrl, menuItems }) => {
   )
 }
 
-const mapStateToProps = ({systemData, armData}) => {
+const mapStateToProps = ({ systemData, armData }) => {
   return {
     currentUrl: systemData.currentUrl,
-    menuItems: armData.menuItems
+    menuItems: armData.menuItems,
   }
 }
 

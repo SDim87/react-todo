@@ -5,7 +5,7 @@ import './index.css'
 const Authorization = () => {
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
-  const logo = require('../../assets/logo_full.svg')
+  const logo = require('../../../assets/svg/logo_full.svg')
 
   return (
     <div className="authorization">
