@@ -10,6 +10,7 @@ const loadState = () => {
   try {
     const serialisedState = sessionStorage.getItem('state')
     if (!serialisedState) return undefined
+    
     return JSON.parse(serialisedState)
   } catch (err) {
     return undefined

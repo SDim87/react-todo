@@ -17,7 +17,8 @@ const Widget = ({ clientName, widgets, widgetData, currentArm }) => {
   const DynamicComponent = React.lazy(() => import(`../../Widgets/${clientName}`))
   const currentWidget = widgets.filter(el => el.clientName === clientName)[0]
 
-  let { isStatic, acronim, name, submenu, calendar, description, helper } = currentWidget
+  let { submenu, calendar } = currentWidget
+  const { isStatic, acronim, name, description, helper } = currentWidget
 
   if (currentArm !== 'operator') {
     submenu = true

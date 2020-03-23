@@ -14,8 +14,8 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ['airbnb-base', 'plugin:react/recommended', 'plugin:import/react'],
-  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
+  extends: ['plugin:react/recommended', 'plugin:import/react'],
+  plugins: ['babel', 'import', 'react'],
   settings: {
     'import/resolver': {
       node: {
@@ -58,7 +58,7 @@ module.exports = {
     'import/no-dynamic-require': 'off',
     'global-require': 'off',
     'no-return-assign': 'off', // вкл присваивание в return
-    'no-param-reassign': 'off', // вкл изменение параметров функций
+    // 'no-param-reassign': 'off', // вкл изменение параметров функций
     'import/no-named-as-default-member': 'off',
     'key-spacing': [
       'error',
@@ -74,11 +74,11 @@ module.exports = {
     'prefer-template': ['error'],
     'prefer-arrow-callback': ['error'],
     // 'arrow-parens': ['error', 'as-needed'],
-    'arrow-parens': 'off',
+    // 'arrow-parens': 'off',
     'camelcase': 'off',
     'no-console': 'off',
     'no-alert': 'off',
-    'consistent-return': 'off', // уточнить, нормальное поведение или нет
+    // 'consistent-return': 'off', // уточнить, нормальное поведение или нет
     'comma-spacing': [
       'error',
       {
@@ -96,7 +96,7 @@ module.exports = {
     ],
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': ['error', 'always'],
-    'curly': 2,
+    'curly': 'off',
     'brace-style': 'error',
     'id-length': 'error',
     'react/jsx-indent': ['error', 2],

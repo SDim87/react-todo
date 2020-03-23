@@ -105,7 +105,9 @@ const Aside = ({ menuItems }) => {
 }
 
 const mapStateToProps = ({ armData }) => {
-  if (armData) return { menuItems: armData.menuItems }
+  if (armData) {
+    return { menuItems: armData.menuItems }
+  }
 }
 
 export default connect(mapStateToProps)(Aside)
