@@ -4,7 +4,7 @@ import widgetContentFunction from '../../Controller/WidgetContent'
 import actions from '../../Redux/Actions'
 import Spinner from '../../Components/Spinner'
 import WidgetSubmenu from '../../Components/WidgetSubmenu'
-import { ReactComponent as QuestMarkIcon } from '../../assets/svg/ques-mark.svg'
+// import { ReactComponent as QuestMarkIcon } from '../../assets/svg/ques-mark.svg'
 
 import './index.css'
 import '../../Components/Helpers/icon.css'
@@ -14,7 +14,8 @@ const { setWidgetData } = actions
 const SmallWidget = ({ serverName, widgets, widgetData, currentArm }) => {
   const currentWidget = widgets.filter(el => el.acronim === serverName)[0]
 
-  let { name, acronim, description, helper, submenu } = currentWidget
+  let { submenu } = currentWidget
+  const { name, acronim, description, helper } = currentWidget
 
   if (currentArm !== 'operator') {
     submenu = true
@@ -72,7 +73,7 @@ const SmallWidget = ({ serverName, widgets, widgetData, currentArm }) => {
           <div className="widget__info">
             {helper ? (
               <div className="widget__help">
-                <QuestMarkIcon className="icon icon_base0-fill icon_size_15" />
+                {/* <QuestMarkIcon className="icon icon_base0-fill icon_size_15" /> */}
                 <div className="widget__help-text">{helpData[serverName]}</div>
               </div>
             ) : null}

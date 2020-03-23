@@ -98,7 +98,7 @@ module.exports = {
     'one-var-declaration-per-line': ['error', 'always'],
     'curly': 'off',
     'brace-style': 'error',
-    'id-length': 'error',
+    'id-length': ['error', { 'exceptions': ['i'] }],
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
     'react/display-name': 0,

@@ -6,7 +6,7 @@ export const makeChart = (_data, element, _width, _height) => {
   const height = _height - margin
   const dataArr = Object.values(_data)
 
-  if (dataArr.filter(e => e > 0).length === 0) {
+  if (dataArr.filter(el => el > 0).length === 0) {
     d3.select(element)
       .append('text')
       .text('Нет данных за выбраный период')
@@ -14,7 +14,7 @@ export const makeChart = (_data, element, _width, _height) => {
       .attr('fill', '#fff')
   }
 
-  if (dataArr.filter(e => e > 0).length !== 0) {
+  if (dataArr.filter(el => el > 0).length !== 0) {
     delete _data.value_type
 
     const data = _data
@@ -109,8 +109,8 @@ export const makeChart = (_data, element, _width, _height) => {
       .attr('cy', '-5px')
       .attr('fill', '#fa4b4b')
 
-    const pie = d3.pie().value((d) => {
-      return d.value
+    const pie = d3.pie().value((el) => {
+      return el.value
     })
 
     const data_ready = pie(d3.entries(data))
@@ -120,8 +120,8 @@ export const makeChart = (_data, element, _width, _height) => {
       .data(data_ready)
       .enter()
       .append('path')
-      .attr('class', (d) => {
-        return d.data.key
+      .attr('class', (el) => {
+        return el.data.key
       })
       .attr('transform', 'translate(0, -10)')
       .attr(
@@ -131,8 +131,8 @@ export const makeChart = (_data, element, _width, _height) => {
           .innerRadius(100)
           .outerRadius(92),
       )
-      .attr('fill', (d) => {
-        switch (d.data.key) {
+      .attr('fill', (el) => {
+        switch (el.data.key) {
           case 'worktime':
             return '#04a881'
           case 'rest':
@@ -143,8 +143,8 @@ export const makeChart = (_data, element, _width, _height) => {
             break
         }
       })
-      .text((p) => {
-        return p.data.key
+      .text((string) => {
+        return string.data.key
       })
   }
 }

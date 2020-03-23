@@ -3,12 +3,12 @@ import Swiper from 'react-id-swiper'
 import { CSSTransition } from 'react-transition-group'
 import { requestMethod } from '../../Controller/Request'
 import actions from '../../Redux/Actions'
-
-import { ReactComponent as ArrowRight } from '../../assets/svg/keyboard_arrow_right.svg'
-import { ReactComponent as ArrowLeft } from '../../assets/svg/keyboard_arrow_left.svg'
-import { ReactComponent as CloseIcon } from '../../assets/svg/close.svg'
-import { ReactComponent as PhotoIcon } from '../../assets/svg/add_photo.svg'
-import { ReactComponent as BasketIcon } from '../../assets/svg/basket.svg'
+  
+// import { ReactComponent as ArrowRight } from '../../../assets/svg/keyboard_arrow_right.svg'
+// import { ReactComponent as ArrowLeft } from '../../../assets/svg/keyboard_arrow_left.svg'
+// import { ReactComponent as CloseIcon } from '../../../assets/svg/close.svg'
+// import { ReactComponent as PhotoIcon } from '../../../assets/svg/add_photo.svg'
+// import { ReactComponent as BasketIcon } from '../../../assets/svg/basket.svg'
 import { ButtonFirst } from '../Button/Button'
 
 import 'swiper/css/swiper.css'
@@ -164,7 +164,7 @@ const SliderFirst = props => {
         style={{
           backgroundImage: `url(${setPathImg(el)})`
         }}
-      >
+        >
         <div className="slider-first__bottom">
           <div className="slider-first__btn">
             <input
@@ -187,12 +187,12 @@ const SliderFirst = props => {
               }}
             ></input>
             <label htmlFor={`add-img-${i}`}>
-              <PhotoIcon className="icon icon_base0-fill icon_size_20" />
+              {/* <PhotoIcon className="icon icon_base0-fill icon_size_20" /> */}
               <span>Загрузить фотографию</span>
             </label>
           </div>
           <button className="slider-first__btn" onClick={() => deleteImg(el)}>
-            <BasketIcon className="icon icon_base0-fill icon_size_20" />
+            {/* <BasketIcon className="icon icon_base0-fill icon_size_20" /> */}
             <span>Удалить фотографию</span>
           </button>
         </div>
@@ -207,9 +207,9 @@ const SliderFirst = props => {
         style={{
           backgroundImage: `url(${setPathImg(el)})`
         }}
-      >
+        >
         <button className="slider-first__del-img" onClick={() => deleteImg(el)}>
-          <CloseIcon className="icon icon_base0-stroke icon_size_8" />
+          {/* <CloseIcon className="icon icon_base0-stroke icon_size_8" /> */}
         </button>
       </div>
     ))
@@ -223,7 +223,7 @@ const SliderFirst = props => {
       onEnter={() => setWindowAvatar(true)}
       onExit={() => setWindowAvatar(false)}
       unmountOnExit
-    >
+      >
       <React.Fragment>
         {windowAvatar && (
           <section className="slider-first">
@@ -236,10 +236,10 @@ const SliderFirst = props => {
               <Swiper {...paramSliderThumb}>{renderSlidesThumb()}</Swiper>
             </div>
             <button className="slider-first__nav slider-first__nav_prev" onClick={goPrev}>
-              <ArrowLeft className="icon icon_base0-stroke icon_size_30" />
+              {/* <ArrowLeft className="icon icon_base0-stroke icon_size_30" /> */}
             </button>
             <button className="slider-first__nav slider-first__nav_next" onClick={goNext}>
-              <ArrowRight className="icon icon_base0-stroke icon_size_30" />
+              {/* <ArrowRight className="icon icon_base0-stroke icon_size_30" /> */}
             </button>
 
             <div className="slider-first__wrap-btn">
@@ -253,7 +253,7 @@ const SliderFirst = props => {
             </div>
 
             <button className="slider-first__close" onClick={() => setWindowAvatar(false)}>
-              <CloseIcon className="icon icon_grey-stroke icon_size_30" />
+              {/* <CloseIcon className="icon icon_grey-stroke icon_size_30" /> */}
             </button>
           </section>
         )}

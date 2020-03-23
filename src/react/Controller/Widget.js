@@ -1,4 +1,4 @@
-import WidgetConfiguration from '../Widgets/WidgetConfiguration'
+import WidgetConfiguration from '../Widgets/WidgetConfiguration.json'
 
 export default class Widget {
   constructor(params) {

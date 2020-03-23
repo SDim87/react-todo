@@ -5,13 +5,11 @@ import './index.css'
 const SelectedFilters = props => {
   const { data, currentFilter, setNewReportData, filters, setFilters } = props
   const [openAkk, setOpenAkk] = useState(false)
-  const getArraySelected = data.filter[currentFilter].list.filter(
-    el => el.selected
-  )
+  const getArraySelected = data.filter[currentFilter].list.filter(el => el.selected)
 
-  const options = {}
+  // const options = {}
 
-  const newOptions = () => options.map(el => el = { ...el, active: true })
+  // const newOptions = () => options.map(el => (el = { ...el, active: true }))
 
   const renderSelectedItems = getArraySelected.map(({ selected, name, id }) => {
     if (selected) {
@@ -21,15 +19,7 @@ const SelectedFilters = props => {
           <button
             className="selected-filter__close"
             onClick={() => {
-              selectFilter(
-                currentFilter,
-                data,
-                false,
-                setNewReportData,
-                name,
-                setFilters,
-                filters
-              )
+              selectFilter(currentFilter, data, false, setNewReportData, name, setFilters, filters)
             }}
           ></button>
         </li>
@@ -42,10 +32,7 @@ const SelectedFilters = props => {
   const renderBtnAccordeon = () => {
     if (getArraySelected.length >= 1) {
       return (
-        <button
-          className="selected-filter__btn"
-          onClick={() => setOpenAkk(!openAkk)}
-        >
+        <button className="selected-filter__btn" onClick={() => setOpenAkk(!openAkk)}>
           {openAkk ? 'Свернуть' : 'Развернуть'}
         </button>
       )

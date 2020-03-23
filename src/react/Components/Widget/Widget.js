@@ -7,7 +7,7 @@ import actions from '../../Redux/Actions'
 import widgetContentFunction from '../../Controller/WidgetContent'
 import './index.css'
 
-const help = require('../../assets/help.svg')
+const help = require('../../../assets/svg/help.svg')
 
 const { setWidgetData } = actions
 
@@ -68,17 +68,17 @@ const Widget = ({ clientName, widgets, widgetData, currentArm }) => {
           day: 'numeric',
         })
 
-        const b = begin.split(' ')
-        const e = end.split(' ')
+        const beginString = begin.split(' ')
+        const endString = end.split(' ')
 
-        b.pop()
-        e.pop()
+        beginString.pop()
+        endString.pop()
 
-        if (+b[b.length - 1] === +e[e.length - 1]) {
-          b.pop()
+        if (+beginString[beginString.length - 1] === +endString[endString.length - 1]) {
+          beginString.pop()
         }
 
-        return `${b.join(' ')} - ${e.join(' ')}`
+        return `${beginString.join(' ')} - ${endString.join(' ')}`
       }
       return null
     }

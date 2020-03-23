@@ -6,7 +6,7 @@ import { getAlerts, templateAlerts } from './controller'
 import Spinner from '../Spinner'
 import './index.css'
 
-const avatar = require('../../assets/avatar_404.svg')
+const avatar = require('../../../assets/svg/avatar_404.svg')
 
 const UserPanel = ({
   first_name,

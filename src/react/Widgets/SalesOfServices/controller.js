@@ -85,15 +85,15 @@ export const getDataFromAPI = async (widget_name, callback__hook) => {
       }
 
       // eslint-disable-next-line
-      const fullValue = obj => {
-        const arr = Object.values(obj)
-        // console.log(arr)
-        console.log(arr.length)
-        for (let i = 0; i < arr.length; i++) {
-          const a = Object.values(arr[i]).reduce((a, b) => a + b)
-          console.log(a)
-        }
-      }
+      // const fullValue = obj => {
+      //   const arr = Object.values(obj)
+      //   // console.log(arr)
+      //   console.log(arr.length)
+      //   for (let i = 0; i < arr.length; i++) {
+      //     const a = Object.values(arr[i]).reduce((a, b) => a + b)
+      //     console.log(a)
+      //   }
+      // }
 
       for (const key in data) {
         const wiType = data[key].service_type
@@ -110,7 +110,7 @@ export const getDataFromAPI = async (widget_name, callback__hook) => {
         d3.range(objCounter(values)).map(index => ({
           name: months[index],
           value: valueCalculate(months[index], values),
-          full: Object.values(valueCalculate(months[index], values)).reduce((a, b) => a + b),
+          full: Object.values(valueCalculate(months[index], values)).reduce((elFirst, elSecond) => elFirst + elSecond),
         })),
       )
     })

@@ -4,7 +4,7 @@ import AppCalendar from '../AppCalendar/AppCalendar'
 import OutsideClickHandler from 'react-outside-click-handler'
 
 const InputDateSelect = props => {
-  const { identificator , type} = props
+  const { identificator, type } = props
 
   const [openCalendar, setCalendar] = useState(false)
 
@@ -13,13 +13,20 @@ const InputDateSelect = props => {
       <div className="date-select">
         <div
           className="date-select__inner"
-          onClick={() => { setCalendar(!openCalendar) }}
+          onClick={() => {
+            setCalendar(!openCalendar)
+          }}
         >
           <div className="date-select__icon"></div>
           {type === 'global' ? <div className="date-select__text">Выбор даты</div> : null}
         </div>
         {openCalendar ? (
-          <AppCalendar type={type} setCalendar={setCalendar} openCalendar={openCalendar} identificator={identificator}/>
+          <AppCalendar
+            type={type}
+            setCalendar={setCalendar}
+            openCalendar={openCalendar}
+            identificator={identificator}
+          />
         ) : null}
       </div>
     </OutsideClickHandler>

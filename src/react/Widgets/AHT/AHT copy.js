@@ -20,11 +20,11 @@ class AHT extends React.Component {
   }
 
   componentDidMount() {
-    const w = document.getElementById(`${this.props.identificator}`).clientWidth
-    const h = document.getElementById(`${this.props.identificator}`).clientHeight - 40
+    const widthClient = document.getElementById(`${this.props.identificator}`).clientWidth
+    const heightClient = document.getElementById(`${this.props.identificator}`).clientHeight - 40
     this.setState({
-      _width: w,
-      _height: h,
+      _width: widthClient,
+      _height: heightClient,
     })
   }
 

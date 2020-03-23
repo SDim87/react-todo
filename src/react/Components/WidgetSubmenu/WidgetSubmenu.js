@@ -3,12 +3,12 @@ import './index.css'
 
 const WidgetSubmenu = ({ submenu, }) => {
   // Function for open submenu in widget
-  const openSubmenu = e => {
+  const openSubmenu = el => {
     // const target = e.target.closest(".widget__submenu");
 
     const subMenu = document.querySelectorAll('.widget__submenu')
 
-    document.addEventListener('click', e => {
+    document.addEventListener('click', el => {
       subMenu.forEach(element => {
         element.removeAttribute('open')
       })
@@ -17,7 +17,7 @@ const WidgetSubmenu = ({ submenu, }) => {
 
   return (
     <details className="widget__submenu">
-      <summary className="widget__button widget__button_context" onClick={e => openSubmenu(e)}>
+      <summary className="widget__button widget__button_context" onClick={evt => openSubmenu(evt)}>
         <i className="material-icons">more_vert</i>
       </summary>
 

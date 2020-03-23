@@ -36,7 +36,7 @@ const Select = props => {
           setDataLabel(el.label)
           setOpen('')
         }}
-      >
+        >
         {el.label}
       </li>
     ))

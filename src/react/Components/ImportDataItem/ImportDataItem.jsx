@@ -22,14 +22,11 @@ const ImportDataItem = ({ widgetData, currentTab, select, identificator }) => {
       if (fileType === 'XLS') {
         currentWidgetData = { file_type: currentWidgetData.file_type }
       }
-      for (let key in currentWidgetData) {
+      for (const key in currentWidgetData) {
         newArr.push(
           <div key={key} className="import-data__selects">
-            <SelectSecond
-              setFileType={setFileType}
-              data={currentWidgetData[key]}
-            />
-          </div>
+            <SelectSecond setFileType={setFileType} data={currentWidgetData[key]} />
+          </div>,
         )
       }
       return newArr
@@ -38,73 +35,89 @@ const ImportDataItem = ({ widgetData, currentTab, select, identificator }) => {
     }
   }
 
-  const submit = (file) => {
+  const submit = file => {
     setIsLoad(false)
 
     sendFile(file)
-      .then(() => {
-        const message = 'Файл загружен на сервер, данные обновились'
-        const popupData = {
-          popupMessage: { success: [message] },
-          popupStatus: true,
-          popupHeader: 'Сообщение'
-        }
+      .then(
+        () => {
+          const message = 'Файл загружен на сервер, данные обновились'
+          const popupData = {
+            popupMessage: { success: [message] },
+            popupStatus: true,
+            popupHeader: 'Сообщение',
+          }
 
-        setPopupData(popupData)
-      },
+          setPopupData(popupData)
+        },
         rej => {
           const popupData = {
             popupMessage: rej.status.message,
             popupStatus: true,
-            popupHeader: 'Ошибка'
+            popupHeader: 'Ошибка',
           }
           setPopupData(popupData)
-        })
+        },
+      )
       .then(() => {
         setIsLoad(true)
       })
       .then(() => setIsLoad(true))
   }
 
-  const input =
+  const input = (
     <React.Fragment>
-      <input className='visually-hidden' id='file-csv' type='file' name='file' multiple accept='' onChange={(event) => setFile(event.target.files[0])} />
-      <label className='import-data__load' htmlFor='file-csv'>Выбрать файл</label>
+      <input
+        className="visually-hidden"
+        id="file-csv"
+        type="file"
+        name="file"
+        multiple
+        accept=""
+        onChange={event => setFile(event.target.files[0])}
+      />
+      <label className="import-data__load" htmlFor="file-csv">
+        Выбрать файл
+      </label>
     </React.Fragment>
+  )
 
   const fileNameField = <span>{file ? file.name : null}</span>
 
-  const buttons = <div className='import-data__box'>
-    <button className='import-data__btn import-data__btn_first' onClick={() => submit(file)}>Загрузка</button>
-    <button className='import-data__btn import-data__btn_second' onClick={() => setFile()}>Отмена</button>
-  </div>
-
-  const content = <div className='import-data'>
-    <div className='import-data__head'>
-      {`Импорт файла для загрузки "${currentTab}"`}
+  const buttons = (
+    <div className="import-data__box">
+      <button className="import-data__btn import-data__btn_first" onClick={() => submit(file)}>
+        Загрузка
+      </button>
+      <button className="import-data__btn import-data__btn_second" onClick={() => setFile()}>
+        Отмена
+      </button>
     </div>
+  )
 
-    <div className="import-data__body">
-      <div className='import-data__blocks-wrapper'>
-        <div className="import-data__file">
-          <span>Файл</span>
-          {file ? fileNameField : input}
-        </div>
-        <div className='import-data__selects-wrapper'>
+  const content = (
+    <div className="import-data">
+      <div className="import-data__head">{`Импорт файла для загрузки "${currentTab}"`}</div>
 
-          {renderBlockSelects()}
+      <div className="import-data__body">
+        <div className="import-data__blocks-wrapper">
+          <div className="import-data__file">
+            <span>Файл</span>
+            {file ? fileNameField : input}
+          </div>
+          <div className="import-data__selects-wrapper">{renderBlockSelects()}</div>
         </div>
+        {file ? buttons : null}
       </div>
-      {file ? buttons : null}
     </div>
-  </div>
+  )
 
   return isLoad ? content : <Spinner />
 }
 
 const mapStateToProps = ({ widgetData }) => {
   return {
-    widgetData: widgetData
+    widgetData: widgetData,
   }
 }
 

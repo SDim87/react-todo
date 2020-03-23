@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import InputInfo from '../../Components/InputInfo/InputInfo'
 import { dataInputsUser, optionsSelect, dataInputsContacts } from './controller'
@@ -7,7 +7,7 @@ import InputDateSelect from '../../Components/InputDateSelect/InputDateSelect'
 import ArmFirst from '../../Components/ArmFirst/ArmFirst'
 import { ButtonFirst } from '../../Components/Button/Button'
 import SliderFirst from '../../Components/SliderFirst/SliderFirst'
-import { requestMethod } from '../../Controller/Request'
+// import { requestMethod } from '../../Controller/Request'
 
 import '../../Components/Helpers/visually-hidden.css'
 import './index.css'
@@ -23,27 +23,27 @@ const Personal = ({ currentArm, userData, photo }) => {
     ))
   }
 
-  const requestData = () => {
-    requestMethod({
-      method: 'POST',
-      addURL: 'users/get',
-      data: { id: 109 }
-    }).then(res => {
-      console.log(res)
-    })
-  }
+  // const requestData = () => {
+  //   requestMethod({
+  //     method: 'POST',
+  //     addURL: 'users/get',
+  //     data: { id: 109 },
+  //   }).then(res => {
+  //     console.log(res)
+  //   })
+  // }
 
   // requestData()
 
-  const requestDataPhotoes = () => {
-    requestMethod({
-      method: 'POST',
-      addURL: 'users/getAllPhotos',
-      data: { user_id: userData.id }
-    }).then(res => {
-      console.log(res)
-    })
-  }
+  // const requestDataPhotoes = () => {
+  //   requestMethod({
+  //     method: 'POST',
+  //     addURL: 'users/getAllPhotos',
+  //     data: { user_id: userData.id },
+  //   }).then(res => {
+  //     console.log(res)
+  //   })
+  // }
 
   // requestDataPhotoes()
 
@@ -195,7 +195,7 @@ const mapStateToProps = ({ systemData, userData }) => {
   return {
     currentArm: systemData.currentArm,
     userData: userData,
-    photo: userData.photo
+    photo: userData.photo,
   }
 }
 

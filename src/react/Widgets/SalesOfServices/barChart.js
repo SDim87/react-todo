@@ -13,11 +13,11 @@ export const makeChart = (data, element, _width, _height) => {
   const height = Math.round(_height - margin.top - margin.bottom) - 50
 
   // Установка размеров графика
-  const x = d3.scaleBand().rangeRound([0, width]);
-  const y = d3.scaleLinear().rangeRound([height, 0])
+  const coordX = d3.scaleBand().rangeRound([0, width]);
+  const coordY = d3.scaleLinear().rangeRound([height, 0])
 
   // Установка тега для последующего построения графика
-  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
+  const coordG = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
 
   // Установка тега для последующего построения легенды
   const legend = svg.append('g').attr('transform', `translate(${margin.left}, ${_height - 10})`)
@@ -99,58 +99,54 @@ export const makeChart = (data, element, _width, _height) => {
     .attr('cy', '-5px')
 
   // Обработка даннх для выстраивания оси Х
-  x.domain(
-    data.map((d) => {
-      return d.name
-    }),
-  )
+  coordX.domain(data.map(el => el.name))
 
   // Обработка даннх для выстраивания оси У, где (d.full / 10) - переменная удлиняющая ось У
-  y.domain([
+  coordY.domain([
     0,
-    d3.max(data, (d) => {
-      const max = d.full + d.full / 10
+    d3.max(data, (coordD) => {
+      const max = coordD.full + coordD.full / 10
       return max
     }),
   ])
 
   // Отрисовка значений оси Х (transparent - невидимая)
-  g.append('g')
+  coordG.append('g')
     .attr('style', 'color: transparent; font-size: 13px; max-width: 50px; word-wrap: wrap')
     .attr('class', 'axis axis--x')
     .attr('transform', `translate(0,${height / 2})`)
     .attr('transform', `translate(0,${height})`)
-    .call(d3.axisBottom(x))
+    .call(d3.axisBottom(coordX))
 
   // Отрисовка кастомных значений оси Х
-  g.selectAll('g.tick')
+  coordG.selectAll('g.tick')
     .data(data)
     .append('text')
     .attr('class', 'brig')
-    .text((d) => {
-      const ar = d.name.split(' ')
+    .text((coordD) => {
+      const ar = coordD.name.split(' ')
       return ar[0]
     })
     .attr('transform', 'translate(0, 20)')
     .attr('fill', 'var(--blue)')
     .attr('style', 'font-size: 0.9em')
 
-  g.selectAll('g.tick')
+  coordG.selectAll('g.tick')
     .data(data)
     .append('text')
     .attr('class', 'brigName')
     .attr('transform', 'translate(0, 35)')
     .attr('fill', 'var(--blue)')
-    .text((d) => {
-      const ar = d.name.split(' ')
+    .text((coordD) => {
+      const ar = coordD.name.split(' ')
       return ar[1]
     })
     .attr('style', 'font-size: 0.8em')
 
   // Отрисовка значений оси У
-  g.append('g')
+  coordG.append('g')
     .attr('class', 'axis axis--y')
-    .call(d3.axisLeft(y).ticks(10, 'h'))
+    .call(d3.axisLeft(coordY).ticks(10, 'h'))
     .append('text')
     .attr('transform', 'rotate(-90)')
     .attr('y', 6)
@@ -159,7 +155,7 @@ export const makeChart = (data, element, _width, _height) => {
     .text('Frequency')
 
   // Отрисовка линий по оси У
-  g.selectAll('g.axis--y g.tick')
+  coordG.selectAll('g.axis--y g.tick')
     .append('line')
     .classed('grid-line', true)
     .attr('x1', 0)
@@ -168,50 +164,50 @@ export const makeChart = (data, element, _width, _height) => {
     .attr('y2', 0)
 
   // Создание деорирующего бара обёртки
-  g.selectAll('.bar_wrap')
+  coordG.selectAll('.bar_wrap')
     .data(data)
     .enter()
     .append('rect')
     .attr('class', 'bar_wrap')
-    .attr('x', (d) => {
-      return x(d.name) + x.bandwidth() / 2.5
+    .attr('x', (coordD) => {
+      return coordX(coordD.name) + coordX.bandwidth() / 2.5
     })
-    .attr('width', x.bandwidth() / 4)
+    .attr('width', coordX.bandwidth() / 4)
     .attr('height', height)
 
   // Цикл создания баров из данных
   for (let i = 0; i < Object.keys(data[0].value).length; i++) {
-    g.selectAll(Object.keys(data[i].value)[i])
+    coordG.selectAll(Object.keys(data[i].value)[i])
       .data(data)
       .enter()
       .append('rect')
       .attr('class', Object.keys(data[i].value)[i])
-      .attr('width', x.bandwidth() / 4)
-      .attr('data-month', (d) => {
-        return d.name
+      .attr('width', coordX.bandwidth() / 4)
+      .attr('data-month', (coordD) => {
+        return coordD.name
       })
-      .attr('x', (d) => {
-        return x(d.name) + x.bandwidth() / 2.5
+      .attr('x', (coordD) => {
+        return coordX(coordD.name) + coordX.bandwidth() / 2.5
       })
-      .attr('y', (d) => {
-        switch (Object.keys(d.value)[i]) {
+      .attr('y', (coordD) => {
+        switch (Object.keys(coordD.value)[i]) {
           case 'extra-equipment':
-            return y(d.full - d.value.SHPD - d.value.iptv - d.value.Telephony)
+            return coordY(coordD.full - coordD.value.SHPD - coordD.value.iptv - coordD.value.Telephony)
           case 'Telephony':
-            return y(d.full - d.value.SHPD - d.value.iptv)
+            return coordY(coordD.full - coordD.value.SHPD - coordD.value.iptv)
           case 'iptv':
-            return y(d.full - d.value.SHPD)
+            return coordY(coordD.full - coordD.value.SHPD)
           case 'SHPD':
-            return y(d.full)
+            return coordY(coordD.full)
           default:
             return new Error()
         }
       })
-      .attr('height', (d) => {
-        return height - y(Object.values(d.value)[i])
+      .attr('height', (coordD) => {
+        return height - coordY(Object.values(coordD.value)[i])
       })
-      .on('mouseover', e => {
-        // const thisVal = e.value.b;
+      .on('mouseover', evt => {
+        // const thisVal = evt.value.b;
       })
   }
 }

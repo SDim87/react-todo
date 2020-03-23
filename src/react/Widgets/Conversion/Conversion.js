@@ -23,11 +23,11 @@ class Conversion extends React.Component {
   }
 
   componentDidMount() {
-    const w = document.getElementById(`${this.props.identificator}`).clientWidth
-    const h = document.getElementById(`${this.props.identificator}`).clientHeight - 100
+    const widthClient = document.getElementById(`${this.props.identificator}`).clientWidth
+    const heightClient = document.getElementById(`${this.props.identificator}`).clientHeight - 100
     this.setState({
-      _width: w,
-      _height: h,
+      _width: widthClient,
+      _height: heightClient,
     })
 
     // const el = d3.select('div#Conversion')

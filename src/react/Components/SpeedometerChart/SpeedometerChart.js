@@ -275,11 +275,11 @@ const Speedometer = (_data, element) => {
       .attr('cursor', 'pointer')
       .on('mouseover', () => {
         const { target } = d3.event
-        const x = d3.mouse(target)[0]
-        const y = d3.mouse(target)[1]
+        const coordX = d3.mouse(target)[0]
+        const coordY = d3.mouse(target)[1]
 
         toolTip
-          .attr('transform', `translate(${x + 5},${y - 10})`)
+          .attr('transform', `translate(${coordX + 5},${coordY - 10})`)
           .attr('width', '33px')
           .attr('height', '33px')
           .attr('fill', 'rgba(95, 101, 115, 0.9)')
@@ -288,15 +288,15 @@ const Speedometer = (_data, element) => {
         toolTipText
           .text('TTT')
           .attr('fill', '#fff')
-          .attr('transform', `translate(${x + 11},${y + 10})`)
+          .attr('transform', `translate(${coordX + 11},${coordY + 10})`)
       })
       .on('mousemove', () => {
         const { target } = d3.event
-        const x = d3.mouse(target)[0]
-        const y = d3.mouse(target)[1]
+        const coordX = d3.mouse(target)[0]
+        const coordY = d3.mouse(target)[1]
 
-        toolTip.attr('transform', `translate(${x + 5},${y - 10})`)
-        toolTipText.attr('transform', `translate(${x + 11},${y + 10})`)
+        toolTip.attr('transform', `translate(${coordX + 5},${coordY - 10})`)
+        toolTipText.attr('transform', `translate(${coordX + 11},${coordY + 10})`)
       })
       .on('mouseout', () => {
         toolTip.attr('fill', 'transparent')
@@ -401,11 +401,11 @@ const Speedometer = (_data, element) => {
       .attr('cursor', 'pointer')
       .on('mouseover', () => {
         const { target } = d3.event
-        const x = d3.mouse(target)[0]
-        const y = d3.mouse(target)[1]
+        const coordX = d3.mouse(target)[0]
+        const coordY = d3.mouse(target)[1]
 
         toolTip
-          .attr('transform', `translate(${x + 5},${y - 10})`)
+          .attr('transform', `translate(${coordX + 5},${coordY - 10})`)
           .attr('rx', '5')
           .attr('width', '33px')
           .attr('height', '33px')
@@ -416,15 +416,15 @@ const Speedometer = (_data, element) => {
           .attr('text-anchor', 'middle')
           .attr('padding', '5px 10px')
           .attr('fill', 'var(--base0)')
-          .attr('transform', `translate(${x + 11},${y + 10})`)
+          .attr('transform', `translate(${coordX + 11},${coordY + 10})`)
       })
       .on('mousemove', () => {
         const { target } = d3.event
-        const x = d3.mouse(target)[0]
-        const y = d3.mouse(target)[1]
+        const coordX = d3.mouse(target)[0]
+        const coordY = d3.mouse(target)[1]
 
-        toolTip.attr('transform', `translate(${x + 5},${y - 10})`)
-        toolTipText.attr('transform', `translate(${x + 11},${y + 10})`)
+        toolTip.attr('transform', `translate(${coordX + 5},${coordY - 10})`)
+        toolTipText.attr('transform', `translate(${coordX + 11},${coordY + 10})`)
       })
       .on('mouseout', () => {
         toolTip.attr('fill', 'transparent')
@@ -517,11 +517,11 @@ const Speedometer = (_data, element) => {
       .attr('cursor', 'pointer')
       .on('mouseover', () => {
         const { target } = d3.event
-        const x = d3.mouse(target)[0]
-        const y = d3.mouse(target)[1]
+        const coordX = d3.mouse(target)[0]
+        const coordY = d3.mouse(target)[1]
 
         toolTip
-          .attr('transform', `translate(${x + 5},${y - 10})`)
+          .attr('transform', `translate(${coordX + 5},${coordY - 10})`)
           .attr('width', '33px')
           .attr('height', '33px')
           .attr('fill', 'rgba(95, 101, 115, 0.9)')
@@ -531,16 +531,16 @@ const Speedometer = (_data, element) => {
         toolTipText
           .text('TTT')
           .attr('fill', '#fff')
-          .attr('transform', `translate(${x + 11},${y + 10})`)
+          .attr('transform', `translate(${coordX + 11},${coordY + 10})`)
           .attr('pointer-events', 'none')
       })
       .on('mousemove', () => {
         const { target } = d3.event
-        const x = d3.mouse(target)[0]
-        const y = d3.mouse(target)[1]
+        const coordX = d3.mouse(target)[0]
+        const coordY = d3.mouse(target)[1]
 
-        toolTip.attr('transform', `translate(${x + 5},${y - 10})`)
-        toolTipText.attr('transform', `translate(${x + 11},${y + 10})`)
+        toolTip.attr('transform', `translate(${coordX + 5},${coordY - 10})`)
+        toolTipText.attr('transform', `translate(${coordX + 11},${coordY + 10})`)
       })
       .on('mouseout', () => {
         toolTip.attr('fill', 'transparent')
